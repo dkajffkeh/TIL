@@ -11,10 +11,11 @@ public class MemoryLeak {
     void leak(){
         ArrayList<EnclosedClass> al = new ArrayList<>();
         int counter = 0;
-        while (true)
+        while (20>counter)
         {
-            al.add(new EnclosingClass(100000).getEnclosedClassObject());
+            al.add(new EnclosingClass(100000000).getEnclosedClassObject());
             System.out.println(counter++);
         }
     }
+
 }
