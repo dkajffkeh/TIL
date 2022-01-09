@@ -27,3 +27,6 @@ spring:
 #logging:
 #  pattern:
 #    console: "[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{traceId}] %-5level %logger{35} %msg %n"
+
+
+# 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
