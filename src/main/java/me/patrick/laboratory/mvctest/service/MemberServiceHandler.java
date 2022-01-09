@@ -24,5 +24,6 @@ public class MemberServiceHandler {
     @Transactional
     public void saveMember(Member m){
         memberRepository.save(m);
+        
     }
 }
