@@ -10,9 +10,9 @@ spring:
     #driver-class-name: oracle.jdbc
     #schema: classpath:data.sql
     #initialization-mode: always
-    url: jdbc:mariadb://localhost:3306/jpatest?characterEncoding=UTF-8&serverTimezone=UTC
-    username: jpatest
-    password: jpatest
+    url: jdbc:mariadb://patrick-lab.cjeq2ffynlc2.ap-northeast-2.rds.amazonaws.com:3306/patricklab?characterEncoding=UTF-8&serverTimezone=UTC
+    username: patricklab
+    password: patricklab
   jpa:
     hibernate:
       ddl-auto: none

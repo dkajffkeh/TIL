@@ -22,6 +22,7 @@ public class MemberController {
     }
     @GetMapping("/member")
     public void createUser(){
+        memberService.createMember();
     }
 
     @GetMapping("/members")
