@@ -30,7 +30,7 @@ public class Coach {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,cascade = ALL)
     @JoinColumn(name = "team_id")
     private Team team;
 

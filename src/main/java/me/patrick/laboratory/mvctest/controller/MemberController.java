@@ -2,6 +2,8 @@ package me.patrick.laboratory.mvctest.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import me.patrick.laboratory.finalvalue.entity.Coach;
+import me.patrick.laboratory.finalvalue.entity.Member;
 import me.patrick.laboratory.mvctest.service.MemberService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +22,12 @@ public class MemberController {
     public String test()  {
         return "haha";
     }
+
     @GetMapping("/member")
     public void createUser(){
-        memberService.createMember();
+         Member m = memberService.createMember();
+         Coach c = m.getCoachs().get(0);
+         log.info(c.getName());
     }
 
     @GetMapping("/members")

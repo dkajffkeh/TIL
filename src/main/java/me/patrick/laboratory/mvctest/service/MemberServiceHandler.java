@@ -24,6 +24,12 @@ public class MemberServiceHandler {
     @Transactional
     public void saveMember(Member m){
         memberRepository.save(m);
-        
+
+    }
+
+    @Transactional
+    public Member findMember(long l) {
+        return memberRepository.findMemberById(l);
+
     }
 }
