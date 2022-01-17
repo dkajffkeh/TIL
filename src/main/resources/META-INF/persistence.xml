@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             version="2.1">
+    <persistence-unit name="laboratory">
+        <class>me.patrick.laboratory.finalvalue.entity.Member</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="patricklab"/>
+            <property name="javax.persistence.jdbc.password" value="patricklab"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://patrick-lab.cjeq2ffynlc2.ap-northeast-2.rds.amazonaws.com:3306/patricklab"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <!-- SQL 출력 시 보기 쉽게 정렬 -->
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- 쿼리 출력 시 주석(comments)도 함께 출력 -->
+            <property name="hibernate.use_sql_comments" value="true"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>

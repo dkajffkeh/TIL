@@ -2,6 +2,9 @@ server:
   port: 9000
 
 spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     #url: jdbc:h2:tcp://localhost/~/querydsl
@@ -24,9 +27,15 @@ spring:
 
   org.hibernate.SQL: debug
   org.hibernate.type: trace
+#  h2:
+#    console:
+#      enabled: true
 #logging:
 #  pattern:
 #    console: "[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{traceId}] %-5level %logger{35} %msg %n"
 
+patrick:
+  name: patrick main
+  age: ${random.int}
 
 # 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

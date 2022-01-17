@@ -2,8 +2,6 @@ package me.patrick.laboratory.mvctest.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import me.patrick.laboratory.finalvalue.entity.Coach;
-import me.patrick.laboratory.finalvalue.entity.Member;
 import me.patrick.laboratory.mvctest.service.MemberService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,10 +22,8 @@ public class MemberController {
     }
 
     @GetMapping("/member")
-    public void createUser(){
-         Member m = memberService.createMember();
-         Coach c = m.getCoachs().get(0);
-         log.info(c.getName());
+    public void createUser() {
+
     }
 
     @GetMapping("/members")
@@ -48,6 +44,18 @@ public class MemberController {
 
     @GetMapping("/trans/test")
     public void transTest() throws IOException {
+    }
+
+    @GetMapping("/hello")
+    public String test1() throws InterruptedException {
+        Thread.sleep(3000L);
+        return "hello";
+    }
+
+    @GetMapping("/world")
+    public String test2() throws InterruptedException {
+        Thread.sleep(1000L);
+        return "world";
     }
 }
 
