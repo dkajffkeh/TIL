@@ -11,5 +11,5 @@
 
 ##Java Spring JPA
 
-- @Transactional 이거 왜쓰는거야? [진흙밭에서 알게된 Spring JPA]
+- [@Transactional 모르면 절!대! 안되는것들 \[Spring JPA\]](https://velog.io/@dkajffkem/Transactional-%EB%AA%A8%EB%A5%B4%EB%A9%B4-%EC%A0%88%EB%8C%80-%EC%95%88%EB%90%98%EB%8A%94%EA%B2%83%EB%93%A4-%EC%A7%84%ED%9D%99%EB%B0%AD%EC%97%90%EC%84%9C-%EC%95%8C%EA%B2%8C%EB%90%9C-Spring-JPA)
 
