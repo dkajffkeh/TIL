@@ -6,7 +6,6 @@ import me.patrick.laboratory.finalvalue.entity.Member;
 import me.patrick.laboratory.repository.CoachRepository;
 import me.patrick.laboratory.repository.MemberRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -19,15 +18,13 @@ public class MemberServiceHandler {
     private final
     CoachRepository coachRepository;
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Transactional
     public void saveMember(Member m){
-        m.changeName("차명섭");
-        memberRepository.save(m);
+        m.changeName("Cellar");
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void changeName(){
-        Member member = memberRepository.findMemberById(14L);
-        member.changeName("울룰루");
+    @Transactional
+    public void otherBusiness(){
+        log.info("멤버와 상관없는 비즈니스로직");
     }
 }

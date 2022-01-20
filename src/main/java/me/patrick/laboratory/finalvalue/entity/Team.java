@@ -23,6 +23,7 @@ public class Team {
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = ALL)
     @JoinColumn(name = "member_id")
+    @Setter
     private Member member;
 
     @OneToOne(

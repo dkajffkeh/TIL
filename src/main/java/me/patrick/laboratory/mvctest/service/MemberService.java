@@ -5,10 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import me.patrick.laboratory.finalvalue.entity.Member;
 import me.patrick.laboratory.repository.MemberQueryRepository;
 import me.patrick.laboratory.repository.MemberRepository;
+import me.patrick.laboratory.repository.TeamRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Slf4j
@@ -17,13 +15,17 @@ public class MemberService {
 
     private final MemberQueryRepository memberQueryRepository;
     private final MemberRepository repository;
+    private final MemberServiceHandler handler;
+    private final TeamRepository teamRepository;
 
-    @Transactional
+
+
+
     public String test(){
         Member m = repository.findMemberById(3L);
-        m.changeName("울룰루");
-        List<Member> members = memberQueryRepository.findMyMember();
-        members.forEach(System.out::println);
+        handler.saveMember(m);
+        m.changeName("Patrick");
+        handler.otherBusiness();
         return null;
     }
 
