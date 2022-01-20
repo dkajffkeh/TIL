@@ -4,10 +4,7 @@ import me.patrick.laboratory.finalvalue.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
-
-
-@Transactional
-public interface MemberRepository extends JpaRepository<Member,Long> , MemberCustomRepository {
+public interface MemberRepository extends JpaRepository<Member,Long>{
 
     @Query("select m from Member m where m.id = :id")
     Member findByMemberByMemberId(Long id);
