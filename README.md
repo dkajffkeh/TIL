@@ -31,4 +31,10 @@
 
 ---
 
-- [IP란?]()
+- [IP란?](https://velog.io/@dkajffkem/IPInternet-Protocol%EB%9E%80)
+
+## 버전관리 - GIT
+
+---
+
+- [Rebase vs Merge 차이와 그 사용법](https://velog.io/write?id=ae66ccbe-4a3f-4efe-a42f-a86538cdbd72)
