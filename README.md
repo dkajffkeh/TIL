@@ -37,4 +37,4 @@
 
 ---
 
-- [Rebase vs Merge 차이와 그 사용법](https://velog.io/write?id=ae66ccbe-4a3f-4efe-a42f-a86538cdbd72)
+- [Rebase vs Merge 차이와 그 사용법](https://velog.io/@dkajffkem/GIT-%EB%B2%84%EC%A0%BC%EA%B4%80%EB%A6%AC-Merge-vs-Rebase)
