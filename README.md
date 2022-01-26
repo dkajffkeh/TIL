@@ -21,6 +21,12 @@
 2. [OSIV(open-session-in-view) 설정은 무엇일까?](https://velog.io/@dkajffkem/OSIV-opensession-in-view-%EC%84%A4%EC%A0%95%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
 3. [DataIntegrityViolationException 에 대해 알아보자](https://velog.io/@dkajffkem/DataIntegrityViolationException-%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
 
+## Spring JPA 나만의 컨벤션 백서
+
+---
+1. [REQUIRES_NEW 를 사용하는 상황을 피하자[Spring JPA 코드 생활백서]](https://velog.io/@dkajffkem/REQUIRESNEW-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%83%81%ED%99%A9%EC%9D%84-%ED%94%BC%ED%95%98%EC%9E%90Spring-JPA-%EC%BD%94%EB%93%9C-%EC%83%9D%ED%99%9C%EB%B0%B1%EC%84%9C)
+
+
 ## 리팩터링
 
 ---
