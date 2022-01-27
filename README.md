@@ -38,6 +38,7 @@
 ---
 
 - [IP란?](https://velog.io/@dkajffkem/IPInternet-Protocol%EB%9E%80)
+- [URI , URL , URN 의 차이](https://velog.io/@dkajffkem/URI-URL-URN-%EC%9D%98-%EC%B0%A8%EC%9D%B4)
 
 ## 버전관리 - GIT
 
