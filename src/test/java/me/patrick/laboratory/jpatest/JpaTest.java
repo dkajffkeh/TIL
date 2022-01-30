@@ -1,6 +1,5 @@
 package me.patrick.laboratory.jpatest;
 
-import me.patrick.laboratory.finalvalue.entity.Member;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

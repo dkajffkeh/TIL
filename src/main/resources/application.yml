@@ -11,14 +11,14 @@ spring:
     #username: sa
     #password:
     #driver-class-name: oracle.jdbc
-    #schema: classpath:data.sql
-    #initialization-mode: always
+    schema: classpath:data.sql
+    initialization-mode: always
     url: jdbc:mariadb://patrick-lab.cjeq2ffynlc2.ap-northeast-2.rds.amazonaws.com:3306/patricklab?characterEncoding=UTF-8&serverTimezone=UTC
     username: patricklab
     password: patricklab
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true
@@ -33,6 +33,8 @@ spring:
 #logging:
 #  pattern:
 #    console: "[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{traceId}] %-5level %logger{35} %msg %n"
+
+
 
 patrick:
   name: patrick main

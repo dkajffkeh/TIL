@@ -23,7 +23,7 @@ public class MemberController {
 
     @GetMapping("/member")
     public void createUser() {
-        memberService.test();
+
     }
 
     @GetMapping("/members")
@@ -33,6 +33,8 @@ public class MemberController {
 
     @GetMapping("/cascade")
     public void cascade(){
+
+
     }
 
     @GetMapping("/thread/local/{thread}")
