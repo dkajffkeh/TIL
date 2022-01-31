@@ -23,7 +23,7 @@ public class MemberController {
 
     @GetMapping("/member")
     public void createUser() {
-
+        memberService.updateMember();
     }
 
     @GetMapping("/members")
@@ -34,9 +34,7 @@ public class MemberController {
     @GetMapping("/cascade")
     public void cascade(){
 
-
     }
-
     @GetMapping("/thread/local/{thread}")
     public void threadLocal(@PathVariable String thread){
     }
@@ -46,18 +44,20 @@ public class MemberController {
 
     @GetMapping("/trans/test")
     public void transTest() throws IOException {
+
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/thread/hold")
     public String test1() throws InterruptedException {
-        Thread.sleep(3000L);
+        Thread.sleep(5000L);
+        log.info("호출");
+        return "helloThreadHold";
+    }
+
+    @GetMapping("/thread/hold/1")
+    public String test2() throws InterruptedException {
         return "hello";
     }
 
-    @GetMapping("/world")
-    public String test2() throws InterruptedException {
-        Thread.sleep(1000L);
-        return "world";
-    }
 }
 

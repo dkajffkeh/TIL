@@ -11,8 +11,8 @@ spring:
     #username: sa
     #password:
     #driver-class-name: oracle.jdbc
-    schema: classpath:data.sql
-    initialization-mode: always
+    #schema: classpath:data.sql
+    #initialization-mode: always
     url: jdbc:mariadb://patrick-lab.cjeq2ffynlc2.ap-northeast-2.rds.amazonaws.com:3306/patricklab?characterEncoding=UTF-8&serverTimezone=UTC
     username: patricklab
     password: patricklab
