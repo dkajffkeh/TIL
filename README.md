@@ -21,6 +21,7 @@
 2. [OSIV(open-session-in-view) 설정은 무엇일까?](https://velog.io/@dkajffkem/OSIV-opensession-in-view-%EC%84%A4%EC%A0%95%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
 3. [DataIntegrityViolationException 에 대해 알아보자](https://velog.io/@dkajffkem/DataIntegrityViolationException-%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
 4. [Projection 사용방법](https://velog.io/@dkajffkem/Projection-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95)
+5. [MappedBy 양방향 연관관계 주인을 설정하는 이유](https://velog.io/@dkajffkem/MappedBy-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EC%A3%BC%EC%9D%B8%EC%9D%84-%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 
 ## Spring JPA 나만의 컨벤션 백서
 

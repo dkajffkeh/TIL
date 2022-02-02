@@ -1,4 +1,4 @@
-package me.patrick.laboratory.finalvalue.masterEntity;
+package me.patrick.laboratory.finalvalue.entity.masterEntity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

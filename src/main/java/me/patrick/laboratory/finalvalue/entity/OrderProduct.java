@@ -2,8 +2,8 @@ package me.patrick.laboratory.finalvalue.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import me.patrick.laboratory.finalvalue.masterEntity.OrderMst;
-import me.patrick.laboratory.finalvalue.masterEntity.ProductMst;
+import me.patrick.laboratory.finalvalue.entity.masterEntity.OrderMst;
+import me.patrick.laboratory.finalvalue.entity.masterEntity.ProductMst;
 
 import javax.persistence.*;
 
