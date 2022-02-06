@@ -43,6 +43,7 @@
 - [DNS 란?](https://velog.io/@dkajffkem/DNS-%EB%9E%80)
 - [URI , URL , URN 의 차이](https://velog.io/@dkajffkem/URI-URL-URN-%EC%9D%98-%EC%B0%A8%EC%9D%B4)
 - [TCP 와 UDP](https://velog.io/@dkajffkem/TCP%EC%99%80-UDP)
+- [HTTP 통신 요청흐름](https://velog.io/@dkajffkem/HTTP-%ED%86%B5%EC%8B%A0-%EC%9A%94%EC%B2%AD%ED%9D%90%EB%A6%84)
 
 ## 버전관리 - GIT
 
