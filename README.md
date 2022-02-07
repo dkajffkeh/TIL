@@ -44,6 +44,7 @@
 - [URI , URL , URN 의 차이](https://velog.io/@dkajffkem/URI-URL-URN-%EC%9D%98-%EC%B0%A8%EC%9D%B4)
 - [TCP 와 UDP](https://velog.io/@dkajffkem/TCP%EC%99%80-UDP)
 - [HTTP 통신 요청흐름](https://velog.io/@dkajffkem/HTTP-%ED%86%B5%EC%8B%A0-%EC%9A%94%EC%B2%AD%ED%9D%90%EB%A6%84)
+- [무상태 프로토콜과 상태유지 프로토콜 Stateless, Stateful](https://velog.io/@dkajffkem/%EB%AC%B4%EC%83%81%ED%83%9C-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%EA%B3%BC-%EC%83%81%ED%83%9C%EC%9C%A0%EC%A7%80-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-Stateless-Stateful)
 
 ## 버전관리 - GIT
 
