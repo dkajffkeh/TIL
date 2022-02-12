@@ -1,19 +1,18 @@
 package me.patrick.laboratory.mvctest.service;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
 import me.patrick.laboratory.finalvalue.entity.masterEntity.OrderMst;
 import me.patrick.laboratory.repository.MemberMasterRepository;
 import me.patrick.laboratory.repository.OrderMasterRepository;
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@Service
-@Slf4j
-@RequiredArgsConstructor
-public class MemberService {
+@SpringBootTest
+@RunWith(SpringRunner.class)
+class MemberServiceTest {
 
     @Autowired
     private MemberMasterRepository memberMasterRepository;
@@ -24,9 +23,11 @@ public class MemberService {
     @Autowired
     private OrderMasterRepository orderMasterRepository;
 
-        /*@Transactional*/
-    @Transactional
-    public void executor(){
+
+    @Test
+    /*@Transactional*/
+    void executor(){
+
         MemberMst member = memberMasterRepository.findById(1L).get();
 
         OrderMst orderMst = OrderMst.builder()
@@ -35,6 +36,7 @@ public class MemberService {
                 .build();
 
         orderMasterRepository.save(orderMst);
+
     }
 
 }

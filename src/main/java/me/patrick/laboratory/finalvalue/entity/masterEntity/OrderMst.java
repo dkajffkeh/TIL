@@ -1,5 +1,7 @@
 package me.patrick.laboratory.finalvalue.entity.masterEntity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.patrick.laboratory.finalvalue.entity.OrderProduct;
@@ -10,6 +12,8 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @Getter
+@AllArgsConstructor
+@Builder
 @Table(name = "ORDER_MST")
 public class OrderMst {
 

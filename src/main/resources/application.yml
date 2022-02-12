@@ -6,19 +6,19 @@ spring:
     host: 127.0.0.1
     port: 6379
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
+    driver-class-name: oracle.jdbc.driver.OracleDriver
     #url: jdbc:h2:tcp://localhost/~/querydsl
     #username: sa
     #password:
     #driver-class-name: oracle.jdbc
     #schema: classpath:data.sql
     #initialization-mode: always
-    url: jdbc:mariadb://patrick-lab.cjeq2ffynlc2.ap-northeast-2.rds.amazonaws.com:3306/patricklab?characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:oracle:thin:@13.125.71.219:1521:XE
     username: patricklab
     password: patricklab
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         show_sql: true

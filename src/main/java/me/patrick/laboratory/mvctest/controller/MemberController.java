@@ -23,7 +23,7 @@ public class MemberController {
 
     @GetMapping("/member")
     public void createUser() {
-        memberService.updateMember();
+        memberService.executor();
     }
 
     @GetMapping("/members")
