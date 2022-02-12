@@ -15,26 +15,27 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class MemberService {
 
-    @Autowired
-    private MemberMasterRepository memberMasterRepository;
-
-    @Autowired
-    private MemberService memberService;
+    private final MemberMasterRepository memberMasterRepository;
 
     @Autowired
     private OrderMasterRepository orderMasterRepository;
-
-        /*@Transactional*/
     @Transactional
     public void executor(){
-        MemberMst member = memberMasterRepository.findById(1L).get();
+
+        MemberMst memberMst = memberMasterRepository.findById("MM20220212000003").get();
 
         OrderMst orderMst = OrderMst.builder()
-                .member(member)
                 .paymentBankName("신한")
+                .member(memberMst)
                 .build();
 
-        orderMasterRepository.save(orderMst);
+        /*orderMasterRepository.save(orderMst);*/
+
+    }
+
+    @Transactional
+    public void orderTest(OrderMst orderMst){
+        /*orderMasterRepository.save(orderMst);*/
     }
 
 }

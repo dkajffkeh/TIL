@@ -1,7 +1,7 @@
 package me.patrick.laboratory.repository;
 
-import me.patrick.laboratory.finalvalue.entity.masterEntity.OrderMst;
+import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderMasterRepository extends JpaRepository<OrderMst, Long> {
+public interface OrderMasterRepository extends JpaRepository<MemberMst, String> {
 }
