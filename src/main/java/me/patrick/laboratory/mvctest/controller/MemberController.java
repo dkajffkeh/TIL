@@ -2,9 +2,11 @@ package me.patrick.laboratory.mvctest.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import me.patrick.laboratory.common.domain.MemberData;
 import me.patrick.laboratory.mvctest.service.MemberService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -24,6 +26,12 @@ public class MemberController {
     @GetMapping("/member")
     public void createUser() {
         memberService.executor();
+    }
+
+    @GetMapping("/get/test")
+    public void getTest(@RequestBody MemberData memberData){
+        System.out.println(memberData.getId());
+        System.out.println(memberData.getPwd());
     }
 
     @GetMapping("/members")
