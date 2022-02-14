@@ -1,12 +1,13 @@
 package me.patrick.laboratory.repository;
 
 import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
-import me.patrick.laboratory.finalvalue.entity.masterEntity.OrderMst;
 import me.patrick.laboratory.mvctest.service.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @SpringBootTest
 class OrderMasterRepositoryTest {
@@ -21,18 +22,19 @@ class OrderMasterRepositoryTest {
     @Autowired
     private MemberService memberService;
 
+    @Autowired
+    private MemberQueryRepository memberQueryRepository;
+
+    @Autowired
+    private OrderQueryRepository orderQueryRepository;
+
     @Test
     @Transactional
     void test(){
 
-        MemberMst memberMst = memberMasterRepository.findById("MM20220212000003").get(); // 비영속상태 객체
+        List<MemberMst> tupleList = memberQueryRepository.findMemberAndOrder();
+        tupleList.forEach(System.out::println);
+        System.out.println(tupleList.get(0).getOrders().toString());
 
-        OrderMst orderMst = OrderMst.builder()
-                .paymentBankName("신한")
-                .member(memberMst)
-                .build();
-
-
-        orderMasterRepository.saveAndFlush(memberMst);
     }
 }

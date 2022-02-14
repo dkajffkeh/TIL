@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 import static me.patrick.laboratory.finalvalue.entity.masterEntity.QMemberMst.memberMst;
+import static me.patrick.laboratory.finalvalue.entity.masterEntity.QOrderMst.orderMst;
 
 
 @RequiredArgsConstructor
@@ -33,4 +34,16 @@ public class MemberQueryRepository {
         entityManager.flush();
         entityManager.clear();
     }
+
+    public List<MemberMst> findMemberAndOrder(){
+
+        return jpaQueryFactory
+                .selectFrom(memberMst)
+                .join(memberMst.orders, orderMst).fetchJoin()
+                .where(memberMst.memberMstId.eq("MM20220212000003"))
+                .fetch();
+
+
+    }
+
 }

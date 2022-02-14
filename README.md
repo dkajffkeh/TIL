@@ -22,7 +22,7 @@
 3. [DataIntegrityViolationException 에 대해 알아보자](https://velog.io/@dkajffkem/DataIntegrityViolationException-%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
 4. [Projection 사용방법](https://velog.io/@dkajffkem/Projection-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95)
 5. [MappedBy 양방향 연관관계 주인을 설정하는 이유](https://velog.io/@dkajffkem/MappedBy-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EC%A3%BC%EC%9D%B8%EC%9D%84-%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
-
+6. [Querydsl Join 정리](https://velog.io/@dkajffkem/Querydsl-Join-%EC%A0%95%EB%A6%AC)
 ## Spring JPA 나만의 컨벤션 백서
 
 ---
@@ -47,6 +47,7 @@
 - [무상태 프로토콜과 상태유지 프로토콜 Stateless, Stateful](https://velog.io/@dkajffkem/%EB%AC%B4%EC%83%81%ED%83%9C-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%EA%B3%BC-%EC%83%81%ED%83%9C%EC%9C%A0%EC%A7%80-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-Stateless-Stateful)
 - [HTTP 메세지](https://velog.io/@dkajffkem/HTTP-%EB%A9%94%EC%84%B8%EC%A7%80)
 - [지속연결](https://velog.io/@dkajffkem/%EC%A7%80%EC%86%8D%EC%97%B0%EA%B2%B0Persistent-Connections)
+- [HTTP 메서드 종류별 특징](https://velog.io/@dkajffkem/HTTP-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%A2%85%EB%A5%98%EB%B3%84-%ED%8A%B9%EC%A7%95)
 
 ## 버전관리 - GIT
 

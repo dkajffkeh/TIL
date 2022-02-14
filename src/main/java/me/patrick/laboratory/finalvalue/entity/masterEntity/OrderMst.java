@@ -1,9 +1,6 @@
 package me.patrick.laboratory.finalvalue.entity.masterEntity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import me.patrick.laboratory.common.idgenerator.SeqGenerator;
 import me.patrick.laboratory.finalvalue.entity.OrderProduct;
 import org.hibernate.annotations.GenericGenerator;
@@ -16,6 +13,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @Builder
+@ToString
 @Table(name = "ORDER_MST")
 public class OrderMst {
 
@@ -37,8 +35,10 @@ public class OrderMst {
     private String paymentBankName;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "order")
+    @ToString.Exclude
     List<OrderProduct> orderProducts;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ToString.Exclude
     private MemberMst member;
 }
