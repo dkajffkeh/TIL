@@ -19,4 +19,8 @@ public class MemberDto {
     private int age;
 
     private List<OrderMst> orders;
+
+    public MemberDto(){
+        throw new IllegalArgumentException("에러 발생");
+    }
 }
