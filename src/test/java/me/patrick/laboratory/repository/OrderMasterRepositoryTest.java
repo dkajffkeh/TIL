@@ -6,6 +6,7 @@ import org.junit.jupiter.api.*;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 @DisplayName("asd😁")
 class OrderMasterRepositoryTest {
@@ -20,6 +21,11 @@ class OrderMasterRepositoryTest {
     @Test
     void create1(){
         System.out.println();
+    }
+
+    @Test
+    void assumeTest(){
+        assumeTrue("LOCAL".equalsIgnoreCase(System.getenv("TEST_ENV")));
     }
 
 
