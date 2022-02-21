@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
 import me.patrick.laboratory.repository.MemberMasterRepository;
 import me.patrick.laboratory.repository.OrderMasterRepository;
+import me.patrick.laboratory.teststatic.TestStaticClass;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,4 +31,9 @@ public class MemberService {
         /*memberMst.orElseThrow(() -> new RuntimeException("haha"));*/
         return memberMst;
     }
+
+    public Integer test(){
+        return TestStaticClass.test(1,2);
+    }
+
 }
