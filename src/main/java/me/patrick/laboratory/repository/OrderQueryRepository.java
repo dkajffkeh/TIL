@@ -18,7 +18,7 @@ public class OrderQueryRepository {
 
     private final JPAQueryFactory jpaQueryFactory;
 
-    public List<Tuple> findByOrderAndMember(){
+    public List<Tuple> findByOrderAndMember() {
 
         return jpaQueryFactory.select(orderMst, memberMst)
                 .from(orderMst)

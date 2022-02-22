@@ -17,7 +17,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/test/hello")
-    public String test()  {
+    public String test() {
         return "haha";
     }
 
@@ -27,25 +27,27 @@ public class MemberController {
     }
 
     @GetMapping("/get/test")
-    public void getTest(){
+    public void getTest() {
 
     }
 
     @GetMapping("/members")
-    public String getMembers()  {
+    public String getMembers() {
         return null;
     }
 
     @GetMapping("/cascade")
-    public void cascade(){
+    public void cascade() {
 
     }
+
     @GetMapping("/thread/local/{thread}")
-    public void threadLocal(@PathVariable String thread){
+    public void threadLocal(@PathVariable String thread) {
     }
 
     @GetMapping("/member/trans/test")
-    public void memberTrans(){}
+    public void memberTrans() {
+    }
 
     @GetMapping("/trans/test")
     public void transTest() throws IOException {

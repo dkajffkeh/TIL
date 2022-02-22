@@ -14,7 +14,7 @@ public class LoggingFilterInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        MDC.put("traceId", UUID.randomUUID().toString().substring(0,8));
+        MDC.put("traceId", UUID.randomUUID().toString().substring(0, 8));
         return true;
     }
 

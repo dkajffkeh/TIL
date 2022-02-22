@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 @DisplayName("asd😁")
@@ -15,37 +15,37 @@ class OrderMasterRepositoryTest {
     void create_test() {
         MemberDto memberDto = null;
 
-        assertTimeout(Duration.ofSeconds(10), ()-> new MemberDto());
+        assertTimeout(Duration.ofSeconds(10), () -> new MemberDto());
     }
 
     @Test
-    void create1(){
+    void create1() {
         System.out.println();
     }
 
     @Test
-    void assumeTest(){
+    void assumeTest() {
         assumeTrue("LOCAL".equalsIgnoreCase(System.getenv("TEST_ENV")));
     }
 
 
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
         System.out.println("beforeAll");
     }
 
     @AfterAll
-    static void AfterAll(){
+    static void AfterAll() {
         System.out.println("afterAll");
     }
 
     @BeforeEach
-    void beforeEach(){
+    void beforeEach() {
         System.out.println("beforeEach");
     }
 
     @AfterEach
-    void afterEach(){
+    void afterEach() {
         System.out.println("afterEach");
     }
 

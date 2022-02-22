@@ -12,7 +12,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -29,13 +30,13 @@ public class MemberServiceTest {
     OrderMasterRepository orderMasterRepository;
 
     @Test
-    void memberIfExistTest(){
+    void memberIfExistTest() {
 
-        MemberService memberService = new MemberService(memberMasterRepository,orderMasterRepository);
+        MemberService memberService = new MemberService(memberMasterRepository, orderMasterRepository);
         MemberMst memberMst = MemberMst.builder()
-                        .memberMstId("MM20220212000003")
-                        .age(33)
-                        .build();
+                .memberMstId("MM20220212000003")
+                .age(33)
+                .build();
         /*when(memberMasterRepository.findById(any())).thenReturn(Optional.of(memberMst));*/
 
         /*Optional<MemberMst> memberMst1 = memberService.executor();*/
@@ -58,9 +59,9 @@ public class MemberServiceTest {
     }
 
     @Test
-    void verifyTest(){
+    void verifyTest() {
 
-        MemberService memberService = new MemberService(memberMasterRepository,orderMasterRepository);
+        MemberService memberService = new MemberService(memberMasterRepository, orderMasterRepository);
         MemberMst memberMst = MemberMst.builder()
                 .memberMstId("MM20220212000003")
                 .age(33)
@@ -69,8 +70,8 @@ public class MemberServiceTest {
 
         assertEquals(memberMst, memberService.executor().get());
 
-        verify(memberMasterRepository,times(1)).delete(any(MemberMst.class));
-        verify(memberMasterRepository,never()).deleteAll();
+        verify(memberMasterRepository, times(1)).delete(any(MemberMst.class));
+        verify(memberMasterRepository, never()).deleteAll();
 
         InOrder inOrder = inOrder(memberMasterRepository);
         inOrder.verify(memberMasterRepository).findById(any(String.class));
@@ -78,8 +79,8 @@ public class MemberServiceTest {
     }
 
     @Test
-    void bddStyleTest(){
-        MemberService memberService = new MemberService(memberMasterRepository,orderMasterRepository);
+    void bddStyleTest() {
+        MemberService memberService = new MemberService(memberMasterRepository, orderMasterRepository);
         MemberMst memberMst = MemberMst.builder()
                 .memberMstId("MM20220212000003")
                 .age(33)

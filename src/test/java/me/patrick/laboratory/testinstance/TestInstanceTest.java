@@ -9,12 +9,12 @@ public class TestInstanceTest {
     int test = 1;
 
     @Test
-    void test(){
+    void test() {
         System.out.println(test++);
     }
 
     @Test
-    void test2(){
+    void test2() {
         System.out.println(test++);
     }
 }

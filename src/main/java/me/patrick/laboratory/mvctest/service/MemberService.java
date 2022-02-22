@@ -32,8 +32,8 @@ public class MemberService {
         return memberMst;
     }
 
-    public Integer test(){
-        return TestStaticClass.test(1,2);
+    public Integer test() {
+        return TestStaticClass.test(1, 2);
     }
 
 }

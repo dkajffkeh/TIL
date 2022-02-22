@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor
-@Table(name ="ORDER_PRODUCT_INFO")
+@Table(name = "ORDER_PRODUCT_INFO")
 public class OrderProduct {
 
 

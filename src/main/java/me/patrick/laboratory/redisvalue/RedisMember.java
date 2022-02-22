@@ -8,7 +8,7 @@ import org.springframework.data.redis.core.RedisHash;
 import javax.persistence.Id;
 
 @Getter
-@RedisHash(value = "member" , timeToLive = 30)
+@RedisHash(value = "member", timeToLive = 30)
 @AllArgsConstructor
 @Builder
 public class RedisMember {

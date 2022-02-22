@@ -8,13 +8,13 @@ public class TestRow {
 
     @Order(1)
     @Test
-    void firstTest(){
+    void firstTest() {
         System.out.println("first Test");
     }
 
     @Order(2)
     @Test
-    void secondTest(){
+    void secondTest() {
         System.out.println("second Test");
     }
 

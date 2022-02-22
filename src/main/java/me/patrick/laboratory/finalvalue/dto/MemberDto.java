@@ -26,7 +26,7 @@ public class MemberDto {
         this.age = age;
     }
 
-    public MemberDto(){
+    public MemberDto() {
         throw new IllegalArgumentException("에러 발생");
     }
 

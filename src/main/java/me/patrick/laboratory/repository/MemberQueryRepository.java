@@ -23,19 +23,19 @@ public class MemberQueryRepository {
     @PersistenceContext
     private final EntityManager entityManager;
 
-    public List<MemberMst> findAllMembers(){
+    public List<MemberMst> findAllMembers() {
         return jpaQueryFactory.selectFrom(memberMst).fetch();
     }
 
-    public void updateMember(){
+    public void updateMember() {
         jpaQueryFactory.update(memberMst)
-                .set(memberMst.username,"Changed")
+                .set(memberMst.username, "Changed")
                 .execute();
         entityManager.flush();
         entityManager.clear();
     }
 
-    public List<MemberMst> findMemberAndOrder(){
+    public List<MemberMst> findMemberAndOrder() {
 
         return jpaQueryFactory
                 .selectFrom(memberMst)

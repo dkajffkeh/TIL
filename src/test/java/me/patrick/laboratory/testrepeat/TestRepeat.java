@@ -18,14 +18,14 @@ public class TestRepeat {
 
     @DisplayName("테스트")
     @RepeatedTest(value = 10, name = "{displayName} {currentRepetition}/{totalRepetitions}")
-    void test(RepetitionInfo repetitionInfo){
+    void test(RepetitionInfo repetitionInfo) {
         System.out.println("순차 테스트 " + repetitionInfo.getCurrentRepetition() + " / " + repetitionInfo.getTotalRepetitions());
     }
 
     @DisplayName("인덱스 파라미터")
     @ParameterizedTest(name = "{index} {displayName} message={0}")
     @ValueSource(strings = {"Hello", "World"})
-    void test(String a){
+    void test(String a) {
         System.out.println(a);
     }
 
@@ -35,31 +35,31 @@ public class TestRepeat {
   /*  @EmptySource
     @NullSource*/
     @NullAndEmptySource
-    void testFurther(String a){
+    void testFurther(String a) {
         System.out.println(a);
     }
 
     @DisplayName("인덱스 파라미터")
     @ParameterizedTest(name = "{index} {displayName} message={0}")
-    @CsvSource({"java","10",""})
+    @CsvSource({"java", "10", ""})
   /*  @EmptySource
     @NullSource*/
     @NullAndEmptySource
-    void cvsSourceTest(String a){
+    void cvsSourceTest(String a) {
         System.out.println(a);
     }
 
     @DisplayName("인덱스 파라미터")
     @ParameterizedTest(name = "{index} {displayName} message={0}")
-    @ValueSource(ints = {10, 20,30})
-    void testSimpleArgument(@ConvertWith(SimpleArgument.class) MemberDto memberDto){
+    @ValueSource(ints = {10, 20, 30})
+    void testSimpleArgument(@ConvertWith(SimpleArgument.class) MemberDto memberDto) {
         System.out.println(memberDto.getAge());
     }
 
     @DisplayName("인덱스 파라미터")
     @ParameterizedTest(name = "{index} {displayName} message={0}")
     @CsvSource({"'자바스터디',10"})
-    void testCVSSimpleArgument(@ConvertWith(SimpleArgument.class) MemberDto memberDto){
+    void testCVSSimpleArgument(@ConvertWith(SimpleArgument.class) MemberDto memberDto) {
         System.out.println(memberDto.getAge());
     }
 
@@ -67,7 +67,7 @@ public class TestRepeat {
 
         @Override
         protected Object convert(Object source, Class<?> targetType) throws ArgumentConversionException {
-            assertEquals(MemberDto.class, targetType,"Can only convert to MemberDto");
+            assertEquals(MemberDto.class, targetType, "Can only convert to MemberDto");
             return new MemberDto(Integer.parseInt(source.toString()));
         }
     }

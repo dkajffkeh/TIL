@@ -39,7 +39,7 @@ public class SeqGenerator implements IdentifierGenerator, Configurable {
                 final ResultSet rs = stmt.executeQuery();
 
                 if (rs.next()) {
-                    log.info(procedureParam+" ID : " + rs.getString("Id"));
+                    log.info(procedureParam + " ID : " + rs.getString("Id"));
                     return rs.getString("Id");
                 }
             } catch (SQLException throwables) {

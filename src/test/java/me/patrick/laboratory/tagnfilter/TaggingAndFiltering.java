@@ -9,14 +9,14 @@ public class TaggingAndFiltering {
     @Test
     @DisplayName("테깅과 필터링")
     @Tag("fast")
-    void fasterTest(){
+    void fasterTest() {
         System.out.println("fast");
     }
 
     @Test
     @DisplayName("테깅과 필터링")
     @Tag("slow")
-    void slowerTest(){
+    void slowerTest() {
         System.out.println("slow");
     }
 }

@@ -1,11 +1,13 @@
 <configuration debug="true">
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{traceId}] %highlight(%-5level) %cyan(%logger{15}) - %msg %n</pattern>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{traceId}] %highlight(%-5level) %cyan(%logger{15}) -
+                %msg %n
+            </pattern>
         </encoder>
     </appender>
     <!-- more stuff -->
     <root level="info">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

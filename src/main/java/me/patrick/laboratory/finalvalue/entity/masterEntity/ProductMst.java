@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-@Table(name ="PRODUCT_MST")
+@Table(name = "PRODUCT_MST")
 public class ProductMst {
 
     private static final String PROCEDURE_PARAM = "PRODUCT_MST";

@@ -14,12 +14,12 @@ public class PerAspect {
     @Around("execution(* me.patrick.laboratory.mvctest.service.MemberService.transactionTest(..))")
     public Object calculatePerformanceTime(ProceedingJoinPoint point) throws Throwable {
         Object result = null;
-            long start = System.currentTimeMillis();
-            result = point.proceed();
-            long end = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
+        result = point.proceed();
+        long end = System.currentTimeMillis();
 
-            log.info(point.getSignature().toString());
-            log.info("수행시간 -> {}",end - start);
+        log.info(point.getSignature().toString());
+        log.info("수행시간 -> {}", end - start);
 
         return result;
 

@@ -39,12 +39,12 @@ public class MemberMst {
     @ToString.Exclude
     private List<OrderMst> orders = new ArrayList<>();
 
-    public void changeName(String username){
-        this.username=username;
+    public void changeName(String username) {
+        this.username = username;
     }
 
-    public void changeAge(int age){
-        this.age=age;
+    public void changeAge(int age) {
+        this.age = age;
     }
 
 }
