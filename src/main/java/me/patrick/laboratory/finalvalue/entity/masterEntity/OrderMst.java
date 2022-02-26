@@ -41,4 +41,8 @@ public class OrderMst {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ToString.Exclude
     private MemberMst member;
+
+    public void changeBankName(String bankName){
+        this.paymentBankName = bankName;
+    }
 }
