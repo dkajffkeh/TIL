@@ -66,8 +66,7 @@
 - [테스트 이름 표시하기](https://velog.io/@dkajffkem/%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9D%B4%EB%A6%84-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0)
 - [Assertion 정리](https://velog.io/@dkajffkem/Assertion-%EC%A0%95%EB%A6%AC)
 
-## 객체 지향의 원리와 이해
 
----
+### 객체지향의 원리와 이해
 
-- [자바 객체지향의 원리와 이해]();
+- [객체지향의 원리와 이해](ReferenceBook/OOP_principle_theory.md)
