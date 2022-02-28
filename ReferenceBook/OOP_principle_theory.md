@@ -35,9 +35,9 @@
     ##### PC Register
     - 프로그램의 실행은 CPU 에서 명령어 즉 instruction (연산지시자) 을 수행하는 과정으로 이루어진다. 이러한 instruction 을 수행하는 동안 필요한 정보를 레지스터 라고 하는데 CPU내의 기억장치를 이용한다.
       > 1 + 2 라는 연산을 수행하는 경우 연산에 필요한 데이터 1, 2, + 연산이 있다. 연산을 수행하다보면 1이라는값과 2라는 값을 받은 후 이 숫자를 더한 결과값을 내는 과정으로 진행된다.
-      > 1과 2처럼 명령에 실행되는 데이터를 Operand(피연산자) 라 하며 더하기 연산 명령과 같은 instruction 도 존재한다. CPU 는 이 모든것을 기억하고 있어야 연산과정을 처리 할 수 있으며
-      > 3이라는 Operand 도 처리 결과를 메모리로 전송해야 하기 때문에 어딘가에 잠시 머물러야 한다. 이떄 사용되는것이 CPU 레지스터 이다.
-      > 하지만 JVM 의 PC register 영역은 CPU 에 직접 연산지시자를 수행하지 않고 Stack 영역에서 피연산자를 별도로 뽑아 메모리 공간에 저장하는 방식을 취하는데 이를 PC Register 가 관할한다.
+       1과 2처럼 명령에 실행되는 데이터를 Operand(피연산자) 라 하며 더하기 연산 명령과 같은 instruction 도 존재한다. CPU 는 이 모든것을 기억하고 있어야 연산과정을 처리 할 수 있으며
+       3이라는 Operand 도 처리 결과를 메모리로 전송해야 하기 때문에 어딘가에 잠시 머물러야 한다. 이떄 사용되는것이 CPU 레지스터 이다.
+       하지만 JVM 의 PC register 영역은 CPU 에 직접 연산지시자를 수행하지 않고 Stack 영역에서 피연산자를 별도로 뽑아 메모리 공간에 저장하는 방식을 취하는데 이를 PC Register 가 관할한다.
     - 자바는 플랫폼에 독립적이기는 하나 OS나 CPU 의 입장에서 보면 하나의 프로세스에 지나지 않기 때문에 머신의 리소스를 사용한다. 
     - PCRegister Thread 마다 하나씩 존재하며 CPU 로 보내는 Instruction 을 제공하기전 버퍼공간으로 활용하게 된다.
     
@@ -113,6 +113,8 @@ public class Start{
 ### 객체 지향의 4대 특성 
 
 1. 캡슐화
+> 자바는 정보 은닉이라 하면 접근 제어자 private, public, default, protected 의 키워드를 이용하여 접근을 제한한다.
+![img.png](images/capsulation.png)
 2. 상속
 > 객체의 상속은 부모와 자식의 관계의 관점으로 바라보는것이 아닌 상위와 하위, 슈퍼와 서브의 관점으로 바라봐야한다. 사람 -> 강호동, 표유류 -> 고래, 박쥐, 소, 말 조류 -> 참새, 독수리
 ```java
@@ -135,14 +137,71 @@ public class Test{
   - 컴퓨터는 가전제품중 하나이다. (O)
   - 아들은 아버지중 하나이다. (X)
 
+> 서브 클래스를 인스턴스화 하여 Heap 메모리에 데이터를 로드 했을경우 슈퍼 클래스도 같이 Heap 메모리에 로드되게 된다. 
+
+```java
+public abstract class Animal{
+    protected String name;
+    
+    public void showName(){
+        System.out.println(name);
+    }
+}
+public class Cow extends Animal{
+    
+    private String habit;
+    
+    public Cow(String habit){
+        this.habit=habit;
+    }
+    public void showHabit(){
+        
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Cow cow = new Cow("긁기");
+        cow.showName();
+        cow.showHabit();
+    }
+}
+```
+위 코드에서 Cow 의 인스턴스 cow 가 Stack 영역에 생성 Heap 영역에 new Cow() 의 데이터가 올라감과 동시에 그 슈퍼클래스인 Animal 또한 같이 올라가게 된다.
+
+![img.png](images/abstractImg.png)
+
+***업캐스팅과 다운케스팅***
+>업캐스팅: 자바에서 서브 클래스는 수퍼클래스의 모든 특성을 상속받는다. 그렇기때문에 서브클래스는 슈퍼클래스로 취급될 수 있다.
+ 서브클래스가 슈퍼클래스로 형변환되는 형태 -> 업캐스팅 상속관계에서 비명시적 형변환이 이뤄진다.
+ ex) Object object = new String();
+ 이때 object 는 String Class 가 갖고있는 자원을 위 코드작성만으로 사용할 수 있을까? 답은 사용할 수 없다. 그에 대한 이유는 런타임 영역에 할당되었을 경우 object 의 타입은 
+ 그저 Object 인것이다. 어떤 값이 들어가건말건 Runtime 시에 어떤 클래스로 선언이 되었는가 만을 고려하게 된다. Object class 에 String 이 갖고있는 split(), toLowerCase() 메소드가
+ 존재하는가? 그렇지 않다. 자바에서 서브 클래스는 슈퍼클래스의 모든 특성을 상속받지만 슈퍼 클래스가 서브 클래스의 자원을 상속받지 않는다.
+ 하여 toLowerCase 호출시 Object 의 super 타입에서 toLowerCase 를 찾게된다. 있을리 만무하다.
+
+- 업캐스팅된 객체에서 서브클래스의 자원을 활용하고 싶다면 ***다운캐스팅(슈퍼클래스가 서브클래스로 형변환 되는 형태)*** 을 해주어야한다.
+
+```java
+(String(object)).toLowerCase();
+```
+
 3. 추상화
 > 추상화는 곧 모델링이다. 구체적인 것을 분리해서 관심 영역에 대한 특성만을 가지고 재조합하는 것이며 사물을 복제하는것이 아니라 비즈니스 로직, 목적에 맞게 관심있는
 > 특성만을 추출해서 표현하는것이다.
 - 자바는 객체 지향의 추상화를 class 키워드로 지원하고 있다. interface, abstract
+
 4. 다형성
+> 다형성의 가장 큰 특성은 Overriding 과 Overloading 이라고 할 수 있다. 슈퍼클래스와 서브클래스 의 기능 재정의, 같은 이름의 메서드 다른 인자의 중복정의등
+- Overriding -> 상위 클래스의 메서드 재정의
+- Overloading -> 같은 이름의 메서드 다른인자의 중복정의.
 
 #### 정적메서드의 사용
 > 정적메서드는 객체의 존재 여부와 관계없이 JVM 구동시 static 영역에 로드되기때문에 주로 유틸리티성 메서드를 주로 사용하게 된다.
+
+
+
+
+
 
 ### 저자 추천사항
 - 어셈블리어 서적을 1권을이라도 읽어보라.
