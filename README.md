@@ -67,6 +67,8 @@
 - [Assertion 정리](https://velog.io/@dkajffkem/Assertion-%EC%A0%95%EB%A6%AC)
 
 
-### 객체지향의 원리와 이해
+## 도서목록
+
+--- 
 
 - [객체지향의 원리와 이해](ReferenceBook/OOP_principle_theory.md)
