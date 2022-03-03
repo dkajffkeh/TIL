@@ -382,30 +382,185 @@ Connection 을 설정하는 부분 이외에는 따로 수정할 필요가 없�
 
 다른 예로 JVM 또한 개방 폐쇄 원칙을 따르고 있다 자바 소스코드는 OS 독립적으로 에플리케이션이 구동되도록 환경을 제공한다. 운영체제 변화에는 닫혀있고 운영체제별 JVM 확장에는 열려있는것이다.
 
-##### 어떻게 코드에 구현해 넣을것인가?
+> 개방폐쇄 원칙이 적용되지 않았을경우 아래와같이 if 문이 줄줄이 늘어날 것이다
 
-OCP 를 적용하는 방법은 크게 두가지가 있다.
+```java
+if(jdbcType == ORACLE){
+    Oracle oracle = new OracleDriver();
+}
 
-1. 상속
-> 단점: 상위클래스가 바뀌면 하위클래스에 끼치는 영향을 줄 수 있다.
+if(jdbcType == MySQL){
+    MySQL mysql = new MySQL();
+}
+        ...
+```
 
+> 개방 폐쇄 원칙 적용후
 
-2. 컴포지션
+```java
+public enum JDBCType {
+    ORACLE,
+    MYSQL,
+    MSSQL,
+}
 
+public interface JDBCInterface {
+    void execute();
+}
 
+public class Oracle extends JDBCInterface {
 
+    public void execute() {
+        System.out.println("OracleLogic");
+    }
+}
 
+public class MySQL extends JDBCInterface {
 
+    public void execute() {
+        System.out.println("MySQLLogic");
+    }
+}
+...
 
+public class JDBCHandlerFactory {
 
+    HashMap<JDBCType, JDBCInterface> jdbcInterfaceHashMap = new HashMap<>();
+
+    public JDBCHandlerFactory() {
+        jdbcInterfaceHashMap.put(JDBCType.ORACLE, new Oracle());
+        jdbcInterfaceHashMap.put(JDBCType.MYSQL, new MySQL());
+    }
+
+    public JDBCInterface getOneByJDBCType(JDBCType jdbcType) {
+        return jdbcInterfaceHashMap.get(jdbcType);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        JDBCType jdbcType = ...
+        JDBCHandlerFactory jdbcHandlerFactory = new JDBCHandlerFactory();
+        JDBCInterface jdbcInterface = jdbcHandlerFactory.getOneByJDBCType(jdbcType);
+        jdbcInterface ...
+    }
+}
+```
+> 인터페이스의 완충작용으로 객체를 사용하는측 Client 함수에서는 몇개의 데이터 베이스가 사용될지라도 코드 변화가 없다.
 
 - LSP(Liskov Substitution Principle) 리스코프 치환 원칙
+
+> 서브타입은 언제나 자신의 기반 타입으로 교체할 수 있어야한다.
+1. 하위 분류는 상위 분류의 한 종류이다.
+2. 수현 분류는 인터페이스화 할 수 있어야한다.
+
+리스코프 치환 원칙은 상속의 법칙 is a kind of 법칙에 위배되지 말아야한다.
+아버지 춘향이 = new 딸();
+
+상속의 개념으로 보면 말이 되보이지만 딸 은 아버지의 한 종류이다 ? 와 같은 망측한 말이 되어버린다.
+
+전자제품 컴퓨터 = new 컴퓨터();
+
+컴퓨터 는 전자제품의 한 종류이다 와 같은 아주 단순한 논리로 접근해야한다.
+
+
 - ISP(Interface Segregation Principle) 인터페이스 분리 원칙
+
+> 클라이언트는 자신이 사용하지 않는 메서드에 의존 관계를 맺으면 안된다.
+
+단일책임 원칙에서 덩어리가 크며 의존성이 높은 객체를 다수의 클래스로 토막내어 사용하였다. 이처럼 SRP 처럼 토막내어 사용할 수 없다면 인터페이스 
+분할 원칙을 사용할 수 있다. SRP와 ISP 는 같은문제에 대한 두 가지 다른해결책이라고 볼 수 있다. 
+
+***코드 예시를 살펴보자***
+```java
+
+/*public interface WashService{
+    void wash();
+    void visit();
+    void detailWash();
+}*/
+
+public class Auton implements WashService, AutonWash{
+    @Override
+    public void wash(){
+        System.out.println("외부 세차");
+    }
+    @Override
+    public void visit(){
+        System.out.println("방문");
+    }
+    @Override
+    public void detailWash(){
+        System.out.println("내부 세차");
+    }
+}
+
+public class InstaWash implements WashService , InstaWashFunc{
+    @Override
+    public void wash(){
+        System.out.println("외부 세차");
+    }
+    @Override
+    public void visit(){
+        System.out.println("방문");
+    }
+    /*@Override // 인스타 워시는 내부 세차를 하지 않고 타이어 세차를 해야한다면? 
+    public void detailWash(){
+        System.out.println("내부 세차");
+    }    */
+    @Override
+    public void void wheelClean(){
+        System.out.println("바퀴 청소");
+    }
+}
+
+public interface WashService{
+    void wash();
+    void visit();
+}
+public interface AutonWash{
+    void detailWash();
+}
+
+public interface InstaWashFunc(){
+    void wheelClean();
+} 
+
+```
+> 자 위와같은 코드로 Auton 이라는 서비스를 구현해볼 수 있다. 하지만 여기서 서비스가 하나가 더 추가 되었다 위 서비스는 내부 세차 서비스를 제공하지 않는다.
+이 경우 구현해 놓은 인터페이스를 빈칸으로 둘 수 있겠지만 새로 들어오는 서비스 들이 각기 다른 서비스를 요구 한다면 1개의 인터페이스로는 소화하기 어려울 것이다.
+이 경우 인터페이스를 분리하는 기법이 사용될 수 있다.
+
+![img.png](images/ISPImage.png)
+
+> 불필요한 다운캐스팅을 피하기 위해서는 빈약한 상위클래스보다 풍성한 상위 클래스를 이용하자.
+
 - DIP(Dependency Inversion Principle) 의존 역전 원칙
 
+1. 고차원 모듈은 저차원 모듈에 의존하면 안 된다.
+2. 두 모듈 모두 다른 추상화된 것에 의존해야한다.
+3. 추상화된 것은 구체적인 것에 의존하면 안된다.
+4. 구체적인 것이 추상화된 것에 의존해야 한다.
+
+***5. 자주 변경되는 구현체에 의존하지 마라.***
+
+DIP 의 핵심 개념은 자신보다 변하기 쉬운 것에 의존하지 마라 이다. 변하기 쉬운 것에 의존하던 것을 추상화된 인터페이스나 상위 클래스르 두어 변하기 쉬운 것의
+변화에 영향받지 않게 하는것이다.
+
+##### SoC (Separation of Concerns)
+
+> 관심이 같은것끼리는 하나의 객체 안으로 또는 친한 객체로 모으고 관심이 다른것은 가능한 한 따로 떨어져 서로 영향을 주지 않도록 분리하라는것이다. 
+SoC 를 적용하였을때 SRP, ISP, OCP 에 도달하게 된다.
+SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향이 있다. 하지만 이렇게 많아진 파일이 논리를 더욱 잘 분할하고 잘 표한하기에 이해하기 쉽고 개발하기 쉬우며 유지와 관리
+> 보수하기 쉬운 소스가 만들어진다.
 
 ### 저자 추천사항
 - 어셈블리어 서적을 1권을이라도 읽어보라.
+- Head First Design Patterns
+- 토비의 스프링 3.1
+- 도메인 주도 설계란 무엇인가?
+- 도메인 주도 설계
 
 
 </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
