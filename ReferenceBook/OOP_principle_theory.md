@@ -561,7 +561,7 @@ SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향�
 1. 어댑터 패턴
 > 어댑터 패턴의 역할은 서로다른 두 인터페이스간 통신이 가능하게 하는것이다.
 
-[어뎁터 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/adapterpattern/SampleAdapterPattern.java)
+[어뎁터 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/adapter/SampleAdapterPattern.java)
 - 위 코드와 같이 InstaWash 의 구현체가 Auton 인터페이스에 의존관계를 형성하도록 구성할 수 있다.
 - 인터페이스 호환성 문제 때문에 같이 쓸 수 없는 클래스들을 연결해서 쓸 수 있다. 
 - InstaWashImpl 클래스에 implements Auton, Insta 둘다 붙여버리면 InstaWash 에 Auton 의 메소드 또한 구현 해줘야 한다 하지만
@@ -575,9 +575,88 @@ SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향�
 - 대리자는 실제 서비스와 같은 이름을 가진 메서드를 호출하고 그 값을 클라이언트에게 돌려준다.
 - 대리자는 실제 서비스의 메서드 호출 전후에 별도의 로직을 수행할 수도 있다.
 
+> 프록시 패턴의 실제 서비스 메서드의 반환값에 가감하지 않는다는 것이 가장 중요하다 결과값을 변형하거나 조작하여서는 안된다.
 
+[프록시 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/proxy/ProxyPattern.java)
 
+- 프록시 패턴은 개방폐쇄 원칙 과 의존 역전 원칙을 적용하여 설계 하여야한다.
 
+3. 데코레이터 패턴
+> 데코레이터 패턴은 프록시패턴과 방식이 동일하나 반환값에 대한 추가적인 데이터를 추가할때 사용되어진다. 마찬가지로 개방 폐쇄 원칙과 의존 역전 원칙이
+적용 되어야한다.
+
+[데코레이터 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/decorator/DecoratorPattern.java)
+
+4. 싱글턴 패턴
+
+> 싱글턴 패턴이란 인스턴스를 하나만 만들어 사용하기 위한 패턴이다 커넥션 풀, 스레드 풀,디바이스 설정 객체 등과 같은 경우 인스턴스를 여러개 만들게 되면
+> 불필요한 자원을 활용하게 되고 예상치 못한 결과를 낳을 수 있다.
+
+- new 를 실행할 수 없도록 생성자에 private 으로 접근 제어자를 지정함
+- 유일한 단일 객체를 반환할 수 있는 정적 메서드가 필요하다.
+- 유일한 단일 객체를 참조할 정적 참조 변수가 필요하다.
+
+[싱글턴 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/singleton/SingletonPattern.java)
+
+5. 템플릿 메서드 패턴
+> 상위 클래스의 견본 메서드에서 하위 클래스가 오버라이딩한 메서드를 호출하는 패턴 의존역전원칙이 적용된 패턴이다.
+
+[템플릿메서드 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/templatemethod/TemplateMethodPattern.java)
+
+6. 팩터리 메서드 패턴
+
+> 오버라이트된 메서드가 객체를 반환하는 패턴
+
+[팩터리메서드 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/factorymethod/FactoryMethodPattern.java)
+
+7 전략패턴
+
+> 클라이언트가 전략을 생성해 전략을 실행할 컨텍스트에 주입하는 패턴
+
+- 전략패턴의 세 요소 
+  1. 전략 메서드를 가진 객체
+  2. 전략 객체를 사용하는 컨텍스트(전략객체를 사용하는 사용자)
+  3. 잔략 객체를 생성해 컨텍스트에 주입하는 클라이언트(전략객체 공급자)
+
+[전략 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/strategy/StrategyPattern.java)
+
+8. 템플릿 콜백 패턴
+
+> 템플릿 콜백패턴은 전략 패턴의 변형으로 3대 프로그래밍 모델 중 하나인 DI 에서 사용하는 특별한 형태의 전략 패턴이다. 전략패턴과 동일하나 전략을 익명 내부 클래스로
+> 정의해서 사용한다는 특징이있다. 전략패턴의 람다 버젼.
+
+[템플릿 콜백 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/templatecallback/TemplateCallbackPattern.java)
+
+## 스프링 삼각형과 설정 정보
+
+#### IoC / DI
+
+의존성을 단순하게 정의하면 의존성은 new 다. 세차라는 객체는 Car 객체가 없으면 작동할 수 없는 구조이다. 따라서 Wash rorcpsms Car 객체에 의존화고있다.
+
+```java
+public class Wash {
+    
+    private final Car car = new Car();
+    
+    public void method(){
+        System.out.println("세차시작");
+        car.stopEngine();
+    }
+}
+```
+> 나머지 의존성 주입 XML 주입법, @Autowired, @Resource 주입법등이 나와 한번 슥 훑어보면 좋을것 같다.
+
+#### AOP
+
+> 스프링 DI 가 의존성 주입이라면 스프링 AOP는 로직 주입이라고 할 수 있다.
+> 코드 = 핵심 관심사 + 모듈 관심사 이다 핵심 관심사는 모듈별로 다르지만 횡단 관심사는 모듈별로 반복되어 중복해서 나타나는 부분이다.
+
+스프링에서 사용하는 @Before @Aspect 등의 실 구현체는 프록시를 사용한다. 실 구현 콘크리트 객체의 메서드에서 주고받는 내용을 감시하거나 조작을 할 수있다.
+@Aspect 는 스프링애게 AOP 를 사용하라는 지시자인것이다. 
+
+***스프링 AOP는 인터페이스 기반으로 동작한다***
+***스프링 AOP는 프록시 기반이다***
+***스프링 AOP는 런타임 기반이다***
 
 ### 저자 추천사항
 - 어셈블리어 서적을 1권을이라도 읽어보라.
