@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.templatecallback;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.templatecallback;
 
 import org.junit.jupiter.api.Test;
 

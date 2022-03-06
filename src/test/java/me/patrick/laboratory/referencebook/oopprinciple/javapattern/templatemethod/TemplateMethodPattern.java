@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.templatemethod;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.templatemethod;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.decorator;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.decorator;
 
 import org.junit.jupiter.api.Test;
 

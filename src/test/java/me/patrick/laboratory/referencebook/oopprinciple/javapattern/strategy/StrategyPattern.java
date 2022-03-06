@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.strategy;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.strategy;
 
 import org.junit.jupiter.api.Test;
 

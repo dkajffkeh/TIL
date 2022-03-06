@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.factorymethod;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.factorymethod;
 
 public class FactoryMethodPattern {
 

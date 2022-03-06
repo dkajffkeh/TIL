@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.proxy;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.proxy;
 
 import org.junit.jupiter.api.Test;
 

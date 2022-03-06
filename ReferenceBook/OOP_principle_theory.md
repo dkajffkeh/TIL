@@ -561,7 +561,7 @@ SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향�
 1. 어댑터 패턴
 > 어댑터 패턴의 역할은 서로다른 두 인터페이스간 통신이 가능하게 하는것이다.
 
-[어뎁터 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/adapter/SampleAdapterPattern.java)
+[어뎁터 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/adapter/SampleAdapterPattern.java)
 - 위 코드와 같이 InstaWash 의 구현체가 Auton 인터페이스에 의존관계를 형성하도록 구성할 수 있다.
 - 인터페이스 호환성 문제 때문에 같이 쓸 수 없는 클래스들을 연결해서 쓸 수 있다. 
 - InstaWashImpl 클래스에 implements Auton, Insta 둘다 붙여버리면 InstaWash 에 Auton 의 메소드 또한 구현 해줘야 한다 하지만
@@ -577,7 +577,7 @@ SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향�
 
 > 프록시 패턴의 실제 서비스 메서드의 반환값에 가감하지 않는다는 것이 가장 중요하다 결과값을 변형하거나 조작하여서는 안된다.
 
-[프록시 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/proxy/ProxyPattern.java)
+[프록시 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/proxy/ProxyPattern.java)
 
 - 프록시 패턴은 개방폐쇄 원칙 과 의존 역전 원칙을 적용하여 설계 하여야한다.
 
@@ -585,7 +585,7 @@ SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향�
 > 데코레이터 패턴은 프록시패턴과 방식이 동일하나 반환값에 대한 추가적인 데이터를 추가할때 사용되어진다. 마찬가지로 개방 폐쇄 원칙과 의존 역전 원칙이
 적용 되어야한다.
 
-[데코레이터 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/decorator/DecoratorPattern.java)
+[데코레이터 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/decorator/DecoratorPattern.java)
 
 4. 싱글턴 패턴
 
@@ -596,18 +596,18 @@ SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향�
 - 유일한 단일 객체를 반환할 수 있는 정적 메서드가 필요하다.
 - 유일한 단일 객체를 참조할 정적 참조 변수가 필요하다.
 
-[싱글턴 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/singleton/SingletonPattern.java)
+[싱글턴 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/singleton/SingletonPattern.java)
 
 5. 템플릿 메서드 패턴
 > 상위 클래스의 견본 메서드에서 하위 클래스가 오버라이딩한 메서드를 호출하는 패턴 의존역전원칙이 적용된 패턴이다.
 
-[템플릿메서드 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/templatemethod/TemplateMethodPattern.java)
+[템플릿메서드 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/templatemethod/TemplateMethodPattern.java)
 
 6. 팩터리 메서드 패턴
 
 > 오버라이트된 메서드가 객체를 반환하는 패턴
 
-[팩터리메서드 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/factorymethod/FactoryMethodPattern.java)
+[팩터리메서드 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/factorymethod/FactoryMethodPattern.java)
 
 7 전략패턴
 
@@ -618,14 +618,14 @@ SOLID 원칙을 적용하면 소스 파일의 개수는 더 많아지는 경향�
   2. 전략 객체를 사용하는 컨텍스트(전략객체를 사용하는 사용자)
   3. 잔략 객체를 생성해 컨텍스트에 주입하는 클라이언트(전략객체 공급자)
 
-[전략 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/strategy/StrategyPattern.java)
+[전략 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/strategy/StrategyPattern.java)
 
 8. 템플릿 콜백 패턴
 
 > 템플릿 콜백패턴은 전략 패턴의 변형으로 3대 프로그래밍 모델 중 하나인 DI 에서 사용하는 특별한 형태의 전략 패턴이다. 전략패턴과 동일하나 전략을 익명 내부 클래스로
 > 정의해서 사용한다는 특징이있다. 전략패턴의 람다 버젼.
 
-[템플릿 콜백 패턴 예제](../src/test/java/me/patrick/laboratory/javapattern/templatecallback/TemplateCallbackPattern.java)
+[템플릿 콜백 패턴 예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/javapattern/templatecallback/TemplateCallbackPattern.java)
 
 ## 스프링 삼각형과 설정 정보
 

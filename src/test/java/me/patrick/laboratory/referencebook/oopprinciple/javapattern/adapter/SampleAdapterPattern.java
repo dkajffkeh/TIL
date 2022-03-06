@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.adapter;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.adapter;
 
 import org.junit.jupiter.api.Test;
 

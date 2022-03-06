@@ -1,4 +1,4 @@
-package me.patrick.laboratory.javapattern.singleton;
+package me.patrick.laboratory.referencebook.oopprinciple.javapattern.singleton;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.util.ObjectUtils;
