@@ -658,6 +658,26 @@ public class Wash {
 ***스프링 AOP는 프록시 기반이다***
 ***스프링 AOP는 런타임 기반이다***
 
+> JoinPoint 파라미터를 사용하면 실행 시점에 실제 호출된 메서드가 무엇인기, 실제 호출된 메서드를 소유한 객체가 무엇인지, 호출된 메서드의 파라미터는 무엇인지
+> 등의 정보를 확인할 수 있다.
+
+[사용 예제](../src/main/java/me/patrick/laboratory/common/support/PerAspect.java)
+
+#### Aspect
+
+> Aspect 는 Pointcut 들과 Advice 들의 집합체이다. 언제 어디에 무엇을 이 된다. 
+
+
+### PSA - 일관성 있는 추상화
+
+> 어느 기술 어느 비즈니스 로직이 들어와도 일관성있는 방식을 제공한다고 해서 이를 PSA 라고 한다. 스프링은 ORM 캐시 트랜잭션 등 다양한 기술에 대한 PSA 를 제공한다.
+
+## 자바 8 람다와 인터페이스 스펙 변화
+
+1. 람다가 도입된 이유
+
+> 
+
 ### 저자 추천사항
 - 어셈블리어 서적을 1권을이라도 읽어보라.
 - Head First Design Patterns
