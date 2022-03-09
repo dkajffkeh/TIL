@@ -697,8 +697,13 @@ public class Test{
     }
 }
 ```
-
 위 코드와 같이 그 즉시 코드블록을 사용한다.
+
+#### 함수형 인터페이스
+
+> 메서드를 하나만 갖는 인터페이스를 자바 8부터는 함수형 인터페이스라고 한다. 이런 함수형 인터페이스만을 람다식으로 변경할 수 있다.
+
+[람다 사용예제](../src/test/java/me/patrick/laboratory/referencebook/oopprinciple/lambda/FunctionalProgramming.java)
 
 ### 저자 추천사항
 - 어셈블리어 서적을 1권을이라도 읽어보라.
