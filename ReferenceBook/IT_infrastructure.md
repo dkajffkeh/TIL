@@ -270,5 +270,8 @@ DNS 서버에 호스트 명이 IP 주소로 지정돼 있는것은 이때문이�
 
 #### 💽AP 서버로부터 DB 까지
 
+> DB 서버에도 다향한 소프트웨어가 존재한다. 웹 계열 시스템이서는 MySQL 이나 PostgreSQL 등이 인기 있 기업용으로는 오라클 데이터베이스 가 있다.
+> 넓이를 RDBMS 밖으로 넓히면 Key-Value-Store 라 불리는 DB 도 존재한다. 
+
 <br><br><br><br><br><br><br><br><br>
 
