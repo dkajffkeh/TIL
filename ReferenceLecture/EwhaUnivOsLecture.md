@@ -68,10 +68,14 @@ reference [OS](http://www.kocw.net/home/m/cview.do?cid=3646706b4347ef09)
 - MS 사의 다중 작업용 GUI 기반 운영 체제
 - 분안정성 (많은 변화를 거쳐 에러를 해결함.)
 
- 
-
 ----
 ## 2강
+
+컴퓨터 시스템 구조 
+
+CPU Interrupt line -> CPU 동작중 마우스나 키보드 등의 입력 조건이 들어올 경우 그에대한 핸들링이 필요함.
+
+
 
 </br></br></br></br></br></br>
 
