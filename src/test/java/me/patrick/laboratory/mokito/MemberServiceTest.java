@@ -37,14 +37,6 @@ public class MemberServiceTest {
                 .memberMstId("MM20220212000003")
                 .age(33)
                 .build();
-        /*when(memberMasterRepository.findById(any())).thenReturn(Optional.of(memberMst));*/
-
-        /*Optional<MemberMst> memberMst1 = memberService.executor();*/
-        /*assertTrue(memberMst1.isPresent());*/
-        /*assertEquals("MM20220212000003", memberMst1.get().getMemberMstId());*/
-
-        /*doThrow(new RuntimeException()).when(memberMasterRepository).findById(any());
-        assertThrows(RuntimeException.class, memberService::executor);*/
 
         when(memberMasterRepository.findById(any()))
                 .thenReturn(Optional.of(memberMst)) // 첫호출
@@ -94,7 +86,6 @@ public class MemberServiceTest {
         // then
         assertEquals(memberMst, optionalMemberMst.get());
         then(memberMasterRepository).should(times(1)).findById(any(String.class));
-
 
     }
 
