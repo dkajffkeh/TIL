@@ -78,3 +78,7 @@
 
 ---
 - [스프링 기반 RestAPI 개발](https://github.com/dkajffkeh/EventRestApi_with_kisun)
+
+
+## 보일러 플레이트 프로젝트
+- [보일러 플레이트 프로젝트](https://github.com/jackson-hong/BoilerPlateProject)
