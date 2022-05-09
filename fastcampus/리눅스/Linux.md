@@ -102,4 +102,6 @@ chmod |소유자|그룹|기타| r->4 w->2 x->1
   
 
 ## 프로세스 관리 및 제어
-- 
+- ctrl + z -> foreground 를 background process 로 관리 하겠다 하지만 중단상태가 유지됨
+> jobs -> 백그라운드 실행 프로세스가 보여짐
+> 
