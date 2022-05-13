@@ -130,4 +130,14 @@ ln -> 바로가기 link.txt hard.txt 같은 inode structure 를 참조함. link.
 ## 쉘 스크립트
 - 쉘을 사용해서 프로그래밍 할 수 있음 서버 작업 자동화 및 운영(DevOps)을 위해 필요함.
 - 전통적으로 쉘스크립트 사용, Perl/python 언어를 쓰기도함
-- 
+
+```shell
+#!/bin/bash
+
+daemons=("patrick","jackson")
+echo ${daemons[1]} 1번배열 출력
+echo ${daemons[@]} 모든 데이터 출력
+echo ${daemons[*]} 모든 데이터 출력
+echo ${#daemons[@]} 배열 크기 출력
+
+```
