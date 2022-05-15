@@ -19,7 +19,7 @@ public class DBLockTest {
     @DisplayName("오더 락 테스트")
     @Transactional
     public void orderLockTest(){
-        OrderMst orderMst = orderMasterRepository.findById("OM20220212000009").get();
+        OrderMst orderMst = orderMasterRepository.findById(1L);
         orderMst.changeBankName("우리");
     }
 }

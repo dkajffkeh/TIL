@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @Builder
-@ToString
 @Table(name = "PAYMENT_MST")
 public class PaymentMst {
 
@@ -17,7 +16,11 @@ public class PaymentMst {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private OrderMst orderMst;
+    @JoinColumn(name = "order_mst_id")
+    private OrderMst order;
+
+    @Column
+    private int productPrice;
+
 }

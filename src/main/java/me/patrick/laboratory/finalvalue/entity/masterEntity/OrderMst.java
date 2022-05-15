@@ -7,6 +7,8 @@ import me.patrick.laboratory.finalvalue.entity.OrderProduct;
 import javax.persistence.*;
 import java.util.List;
 
+import static me.patrick.laboratory.common.type.OrderStatus.DONE;
+
 @Entity
 @NoArgsConstructor
 @Getter
@@ -44,11 +46,19 @@ public class OrderMst {
     @ToString.Exclude
     List<OrderProduct> orderProducts;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "order")
+    @ToString.Exclude
+    List<PaymentMst> payments;
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ToString.Exclude
     private MemberMst member;
 
     public void changeBankName(String bankName){
         this.paymentBankName = bankName;
+    }
+
+    public void processDone(){
+        this.orderStatus = DONE;
     }
 }
