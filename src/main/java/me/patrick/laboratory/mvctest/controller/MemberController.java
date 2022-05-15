@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.patrick.laboratory.mvctest.service.MemberService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.IOException;
 
 @RestController
 @AllArgsConstructor
@@ -21,49 +19,16 @@ public class MemberController {
         return "haha";
     }
 
-    @GetMapping("/member")
-    public void createUser() {
-        memberService.executor();
+    @PostMapping("/member")
+    public String createUser(){
+        memberService.createUser();
+        return "success";
     }
 
-    @GetMapping("/get/test")
-    public void getTest() {
-
-    }
-
-    @GetMapping("/members")
-    public String getMembers() {
-        return null;
-    }
-
-    @GetMapping("/cascade")
-    public void cascade() {
-
-    }
-
-    @GetMapping("/thread/local/{thread}")
-    public void threadLocal(@PathVariable String thread) {
-    }
-
-    @GetMapping("/member/trans/test")
-    public void memberTrans() {
-    }
-
-    @GetMapping("/trans/test")
-    public void transTest() throws IOException {
-
-    }
-
-    @GetMapping("/thread/hold")
-    public String test1() throws InterruptedException {
-        Thread.sleep(5000L);
-        log.info("호출");
-        return "helloThreadHold";
-    }
-
-    @GetMapping("/thread/hold/1")
-    public String test2() throws InterruptedException {
-        return "hello";
+    @PostMapping("/order")
+    public String createOrder(){
+        memberService.createOrder();
+        return "success";
     }
 
 }

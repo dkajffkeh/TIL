@@ -1,9 +1,8 @@
 package me.patrick.laboratory.finalvalue.entity.masterEntity;
 
 import lombok.*;
-import me.patrick.laboratory.common.idgenerator.SeqGenerator;
+import me.patrick.laboratory.common.type.OrderStatus;
 import me.patrick.laboratory.finalvalue.entity.OrderProduct;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,7 +18,7 @@ public class OrderMst {
 
     private static final String PROCEDURE_PARAM = "ORDER_MST";
 
-    @Id
+    /*@Id
     @GenericGenerator(name = "idGeneratorOrderMst", //@GeneratedValue의 generator modifier에서 사용할 이름
             strategy = "me.patrick.laboratory.common.idgenerator.SeqGenerator", // IdentifierGenerator 인터페이스를 구현한 클래스 이름. 전체 패키지를 포함한 클래스 이름을 적어야 합니다.
             parameters = @org.hibernate.annotations.Parameter( // Configurable 인터페이스 구현 클래스에 넘겨줄 파라미터 설정
@@ -29,10 +28,17 @@ public class OrderMst {
     )
     @GeneratedValue(generator = "idGeneratorOrderMst")
     @Column
-    private String orderMstId;
+    private String orderMstId;*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column
     private String paymentBankName;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private OrderStatus orderStatus;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "order")
     @ToString.Exclude

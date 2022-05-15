@@ -1,8 +1,6 @@
 package me.patrick.laboratory.finalvalue.entity.masterEntity;
 
 import lombok.*;
-import me.patrick.laboratory.common.idgenerator.SeqGenerator;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,12 +12,17 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @Table(name = "MEMBER_MST")
+/*@SequenceGenerator(
+        name = "MEMBER_MST_SEQ_GENERATOR",
+        sequenceName = "MEMBER_MST_SEQ", // 매핑할 데이터베이스 시퀀스 이름
+        initialValue = 1,
+        allocationSize = 1)*/
 @ToString
 public class MemberMst {
 
     private static final String PROCEDURE_PARAM = "MEMBER_MST";
 
-    @Id
+    /*@Id
     @GenericGenerator(name = "idGeneratorMemberMst", //@GeneratedValue의 generator modifier에서 사용할 이름
             strategy = "me.patrick.laboratory.common.idgenerator.SeqGenerator", // IdentifierGenerator 인터페이스를 구현한 클래스 이름. 전체 패키지를 포함한 클래스 이름을 적어야 합니다.
             parameters = @org.hibernate.annotations.Parameter( // Configurable 인터페이스 구현 클래스에 넘겨줄 파라미터 설정
@@ -28,8 +31,12 @@ public class MemberMst {
             )
     )
     @GeneratedValue(generator = "idGeneratorMemberMst")
-    @Column
-    private String memberMstId;
+    @Column*/
+    /*@GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "MEMBER_MST_SEQ_GENERATOR")*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String username;
 
