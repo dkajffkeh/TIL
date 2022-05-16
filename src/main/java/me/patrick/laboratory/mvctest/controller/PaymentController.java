@@ -15,7 +15,7 @@ public class PaymentController {
     private final PaymentService paymentService;
 
     @PostMapping("/payment")
-    public String createPayment(@RequestBody PaymentParam paymentParam){
+    public synchronized String createPayment(@RequestBody PaymentParam paymentParam){
         paymentService.createPayment(paymentParam);
         return "success";
     }
