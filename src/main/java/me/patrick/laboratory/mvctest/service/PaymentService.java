@@ -10,6 +10,7 @@ import me.patrick.laboratory.repository.OrderMasterRepository;
 import me.patrick.laboratory.repository.PaymentRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.ResourceAccessException;
 
 import static java.lang.Thread.sleep;
 
@@ -45,5 +46,18 @@ public class PaymentService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @Transactional
+    public void createPayment(){
+        OrderMst orderMst = orderMasterRepository.findById(2L).get();
+        PaymentMst paymentMst = PaymentMst.builder()
+                .order(orderMst)
+                .productPrice(4000)
+                .build();
+
+        paymentRepository.save(paymentMst);
+
+        throw new ResourceAccessException("ResourceAccessException");
     }
 }
