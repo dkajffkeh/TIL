@@ -51,7 +51,7 @@
 - [HTTP 메세지](https://velog.io/@dkajffkem/HTTP-%EB%A9%94%EC%84%B8%EC%A7%80)
 - [지속연결](https://velog.io/@dkajffkem/%EC%A7%80%EC%86%8D%EC%97%B0%EA%B2%B0Persistent-Connections)
 - [HTTP 메서드 종류별 특징](https://velog.io/@dkajffkem/HTTP-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%A2%85%EB%A5%98%EB%B3%84-%ED%8A%B9%EC%A7%95)
-
+- [HTTP 메서드 속성](https://velog.io/write?id=476cbc75-82bd-4c70-b518-32f70a56efc1)
 ## 버전관리 - GIT
 
 ---
