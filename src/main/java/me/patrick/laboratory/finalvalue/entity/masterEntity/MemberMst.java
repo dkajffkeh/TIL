@@ -35,7 +35,7 @@ public class MemberMst {
     /*@GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "MEMBER_MST_SEQ_GENERATOR")*/
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
@@ -45,6 +45,13 @@ public class MemberMst {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "member")
     @ToString.Exclude
     private List<OrderMst> orders = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "member")
+    @ToString.Exclude
+    private List<Board> boards = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "member")
+    private List<Comment> comments = new ArrayList<>();
 
     public void changeName(String username) {
         this.username = username;

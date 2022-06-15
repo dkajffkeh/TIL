@@ -1,6 +1,5 @@
 package me.patrick.laboratory.dblocktest;
 
-import me.patrick.laboratory.finalvalue.entity.masterEntity.OrderMst;
 import me.patrick.laboratory.repository.OrderMasterRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,7 @@ public class DBLockTest {
     @DisplayName("오더 락 테스트")
     @Transactional
     public void orderLockTest(){
-        OrderMst orderMst = orderMasterRepository.findById(1L);
-        orderMst.changeBankName("우리");
+        /*OrderMst orderMst = orderMasterRepository.findById(1L);*/
+        /*orderMst.changeBankName("우리");*/
     }
 }
