@@ -17,7 +17,11 @@ import java.util.List;
         sequenceName = "MEMBER_MST_SEQ", // 매핑할 데이터베이스 시퀀스 이름
         initialValue = 1,
         allocationSize = 1)*/
-@ToString
+@NamedEntityGraph(name = "MemberMstEntities",
+attributeNodes = {
+         @NamedAttributeNode("boards")
+        ,@NamedAttributeNode("comments")
+        })
 public class MemberMst {
 
     private static final String PROCEDURE_PARAM = "MEMBER_MST";
@@ -46,11 +50,11 @@ public class MemberMst {
     @ToString.Exclude
     private List<OrderMst> orders = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "member")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "member")
     @ToString.Exclude
     private List<Board> boards = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "member")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "member")
     private List<Comment> comments = new ArrayList<>();
 
     public void changeName(String username) {

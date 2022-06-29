@@ -4,6 +4,8 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
+import org.springframework.data.jpa.repository.EntityGraph;
+import org.springframework.data.jpa.repository.EntityGraph.EntityGraphType;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -22,6 +24,7 @@ public class MemberQueryRepository {
     @PersistenceContext
     private final EntityManager entityManager;
 
+    @EntityGraph(value = "MemberMstEntities", type = EntityGraphType.LOAD)
     public List<MemberMst> findAllMembers(){
 
         return jpaQueryFactory
