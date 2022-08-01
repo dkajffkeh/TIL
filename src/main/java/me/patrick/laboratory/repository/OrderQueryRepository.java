@@ -12,5 +12,7 @@ public class OrderQueryRepository {
 
     private final JPAQueryFactory jpaQueryFactory;
 
-
 }
+
+
+
