@@ -10,6 +10,8 @@ import me.patrick.laboratory.teststatic.TestStaticClass;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -24,11 +26,17 @@ public class MemberService {
         return TestStaticClass.test(1, 2);
     }
 
-    @Transactional
+    public void saveAllTest() {
+        List<MemberMst> members = memberMasterRepository.findAll();
+
+        members.forEach(it -> it.plusAge(1));
+
+        memberMasterRepository.saveAll(members);
+    }
+
     public void createUser() {
-        MemberMst m = memberMasterRepository.findById(1L).get();
-        memberServiceHandler.memberHandler();
-        m.changeAge(33);
+        MemberMst m = new MemberMst("유호연",30);
+        memberMasterRepository.save(m);
     }
 
     @Transactional

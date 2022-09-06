@@ -15,10 +15,12 @@ spring:
     #initialization-mode: always
     #url: jdbc:oracle:thin:@13.125.71.219:1521:XE
 
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/patricklab
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/patricklab?useUnicode=true&serverTimezone=Asia/Seoul
     username: patricklab
     password: patricklab
+    hikari:
+      maximum-pool-size: 40
   jpa:
     open-in-view: false
     hibernate:
@@ -29,17 +31,9 @@ spring:
         format_sql: true
         use_sql_comments: true
     database: mysql
-#  h2:
-#    console:
-#      enabled: true
-#logging:
-#  pattern:
-#    console: "[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%X{traceId}] %-5level %logger{35} %msg %n"
-
 
 
 patrick:
   name: patrick main
-  age: ${random.int}
-
+  age: ${random.int}logging
 #  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

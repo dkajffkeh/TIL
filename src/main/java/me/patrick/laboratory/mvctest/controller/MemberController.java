@@ -16,6 +16,7 @@ public class MemberController {
 
     @GetMapping("/test/hello")
     public String test() {
+        memberService.saveAllTest();
         return "haha";
     }
 

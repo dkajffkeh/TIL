@@ -65,4 +65,12 @@ public class MemberMst {
         this.age = age;
     }
 
+    public MemberMst(String username, int age) {
+        this.username = username;
+        this.age = age;
+    }
+
+    public void plusAge(int age) {
+        this.age = this.age + age;
+    }
 }
