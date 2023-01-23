@@ -6,14 +6,11 @@ import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
 import me.patrick.laboratory.finalvalue.entity.masterEntity.OrderMst;
 import me.patrick.laboratory.repository.MemberMasterRepository;
 import me.patrick.laboratory.repository.OrderMasterRepository;
-import me.patrick.laboratory.teststatic.TestStaticClass;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -25,10 +22,6 @@ public class MemberService {
     private final OrderMasterRepository orderMasterRepository;
 
     private final MemberServiceHandler memberServiceHandler;
-
-    public Integer test() {
-        return TestStaticClass.test(1, 2);
-    }
 
     public void saveAllTest() {
         List<MemberMst> members = memberMasterRepository.findAll();
