@@ -34,10 +34,6 @@
 - JVM 은 스택기반의 자바 가상머신 (Java Virtual Machine) 으로 클래스 로더로부터 읽어온 바이트코드를 실제 실행하는 머신이다. 총 5가지의 큰 범주로 분리 되며 
   PC Register (Area), Stack, Native method stack, Method Area, Heap  
 
-    ##### 클래스 로더
-    
-    > 
-
     ##### PC Register
     - 프로그램의 실행은 CPU 에서 명령어 즉 instruction (연산지시자) 을 수행하는 과정으로 이루어진다. 이러한 instruction 을 수행하는 동안 필요한 정보를 레지스터 라고 하는데 CPU내의 기억장치를 이용한다.
       > 1 + 2 라는 연산을 수행하는 경우 연산에 필요한 데이터 1, 2, + 연산이 있다. 연산을 수행하다보면 1이라는값과 2라는 값을 받은 후 이 숫자를 더한 결과값을 내는 과정으로 진행된다.

@@ -7,9 +7,13 @@ import me.patrick.laboratory.finalvalue.entity.masterEntity.OrderMst;
 import me.patrick.laboratory.repository.MemberMasterRepository;
 import me.patrick.laboratory.repository.OrderMasterRepository;
 import me.patrick.laboratory.teststatic.TestStaticClass;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -34,9 +38,19 @@ public class MemberService {
         memberMasterRepository.saveAll(members);
     }
 
-    public void createUser() {
-        MemberMst m = new MemberMst("유호연",30);
+    public Long createUser() {
+        MemberMst m = MemberMst.of();
         memberMasterRepository.save(m);
+        return m.getId();
+    }
+
+    @Transactional
+    public void npoTestHandler(Pageable pageable) {
+        Page<MemberMst> members = memberMasterRepository.findAll(pageable);
+
+        members.getContent().forEach(mem -> {
+            log.info(mem.getOrders().toString());
+        });
     }
 
     @Transactional

@@ -1,6 +1,7 @@
 package me.patrick.laboratory.finalvalue.entity.masterEntity;
 
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @Builder
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "MEMBER_MST")
 /*@SequenceGenerator(
         name = "MEMBER_MST_SEQ_GENERATOR",
@@ -20,8 +21,11 @@ import java.util.List;
 @NamedEntityGraph(name = "MemberMstEntities",
 attributeNodes = {
          @NamedAttributeNode("boards")
+        ,@NamedAttributeNode("orders")
         ,@NamedAttributeNode("comments")
         })
+@BatchSize(size = 5)
+
 public class MemberMst {
 
     private static final String PROCEDURE_PARAM = "MEMBER_MST";
@@ -46,7 +50,7 @@ public class MemberMst {
 
     private int age;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "member")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "member")
     @ToString.Exclude
     private List<OrderMst> orders = new ArrayList<>();
 
@@ -61,8 +65,8 @@ public class MemberMst {
         this.username = username;
     }
 
-    public void changeAge(int age) {
-        this.age = age;
+    public static MemberMst of() {
+        return new MemberMst("홍지운",33);
     }
 
     public MemberMst(String username, int age) {

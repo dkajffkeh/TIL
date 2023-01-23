@@ -56,6 +56,8 @@
 - [3xx Message](https://velog.io/@dkajffkem/3xx-Message) 
 > Reference : [리소스 네이밍](https://restfulapi.net/resource-naming/)
 
+- [웹 브라우저에 www.naver.com 을 입력하면 일어나는 일](https://velog.io/write?id=531bd7ad-18ac-4710-9009-3d026879c375)
+
 ## 버전관리 - GIT
 
 ---
@@ -82,6 +84,7 @@
 
 ---
 - [스프링 기반 RestAPI 개발](https://github.com/dkajffkeh/EventRestApi_with_kisun)
+- [Optimistic Lock, Pessmistick Lock](https://velog.io/@dkajffkem/Optimistic-Lock-Pessmistick-Lock)
 
 
 ## 보일러 플레이트 프로젝트
