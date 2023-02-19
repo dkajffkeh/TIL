@@ -6,6 +6,12 @@
 
 > 방구석 철학자가 되지 않기위한 기록.
 
+## 회고
+
+---
+- [퇴사회고](https://velog.io/@dkajffkem/%ED%87%B4%EC%82%AC-%ED%9A%8C%EA%B3%A0#1-%EC%9E%85%EC%82%AC)
+
+
 ## Java
 
 ---

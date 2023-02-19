@@ -20,4 +20,12 @@ public class MemberServiceHandler {
         MemberMst m = memberMasterRepository.findById(1L).get();
         m.changeName("Patrick");
     }
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void memberModifyTest() {
+        MemberMst m = memberMasterRepository.findById(18L).get();
+        m.changeName("김종구");
+    }
+
+
 }

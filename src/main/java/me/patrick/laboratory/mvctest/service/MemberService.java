@@ -38,12 +38,16 @@ public class MemberService {
     }
 
     @Transactional
+    public void memberModifyTest() {
+        MemberMst m = memberMasterRepository.findById(18L).get();
+        memberServiceHandler.memberModifyTest();
+        m.changeName("유호연");
+    }
+
+    @Transactional
     public void npoTestHandler(Pageable pageable) {
         Page<MemberMst> members = memberMasterRepository.findAll(pageable);
-
-        members.getContent().forEach(mem -> {
-            log.info(mem.getOrders().toString());
-        });
+        members.getContent().forEach(mem -> log.info(mem.getOrders().toString()));
     }
 
     @Transactional

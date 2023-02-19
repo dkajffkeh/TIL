@@ -31,6 +31,11 @@ public class MemberController {
         return memberService.createUser();
     }
 
+    @PostMapping("/member/modify")
+    public void osivTest() {
+        memberService.memberModifyTest();
+    }
+
     @PostMapping("/order")
     public String createOrder(){
         memberService.createOrder();

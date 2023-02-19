@@ -26,6 +26,5 @@ class MemberServiceTest {
                         orderMasterRepository,
                         memberServiceHandler
                 );
-
     }
 }

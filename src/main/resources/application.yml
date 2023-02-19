@@ -25,6 +25,13 @@ spring:
         use_sql_comments: true
     database: mysql
 
+
 patrick:
   name: patrick main
   age: ${random.int}logging
+
+# Mybatis
+mybatis:
+  type-aliases-package: me.patrick.mybatis.mapper
+  mapper-locations:
+    - static/mapper/*.xml
