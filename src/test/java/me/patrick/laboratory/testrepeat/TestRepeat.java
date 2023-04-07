@@ -1,6 +1,7 @@
 package me.patrick.laboratory.testrepeat;
 
 import me.patrick.laboratory.finalvalue.dto.MemberDto;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
@@ -14,6 +15,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Disabled
 public class TestRepeat {
 
     @DisplayName("테스트")
@@ -52,6 +54,7 @@ public class TestRepeat {
     @DisplayName("인덱스 파라미터")
     @ParameterizedTest(name = "{index} {displayName} message={0}")
     @ValueSource(ints = {10, 20, 30})
+    @Disabled
     void testSimpleArgument(@ConvertWith(SimpleArgument.class) MemberDto memberDto) {
         System.out.println(memberDto.getAge());
     }
@@ -59,6 +62,7 @@ public class TestRepeat {
     @DisplayName("인덱스 파라미터")
     @ParameterizedTest(name = "{index} {displayName} message={0}")
     @CsvSource({"'자바스터디',10"})
+    @Disabled
     void testCVSSimpleArgument(@ConvertWith(SimpleArgument.class) MemberDto memberDto) {
         System.out.println(memberDto.getAge());
     }

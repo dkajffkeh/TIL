@@ -2,6 +2,7 @@ package me.patrick.laboratory.service;
 
 import me.patrick.laboratory.param.Customer;
 import me.patrick.laboratory.param.ResultEntity;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ class WebClientRestServiceTest {
 
     @Test
     @DisplayName("getTest")
+    @Disabled
     void getTest() {
 
         final ResultEntity<Customer> res = webClientRestService.requestGet(

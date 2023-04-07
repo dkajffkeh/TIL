@@ -2,13 +2,13 @@ package me.patrick.laboratory.mvctest.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import me.patrick.laboratory.common.annotation.aspect.LogExecutionTime;
 import me.patrick.laboratory.mvctest.service.MemberService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @AllArgsConstructor
@@ -29,6 +29,7 @@ public class MemberController {
     }
 
     @PostMapping("/member")
+    @LogExecutionTime
     public Long createUser(){
         return memberService.createUser();
     }

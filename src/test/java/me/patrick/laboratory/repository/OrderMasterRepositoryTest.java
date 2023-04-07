@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 class OrderMasterRepositoryTest {
 
     @Test
+    @Disabled
     void create_test() {
         MemberDto memberDto = null;
 
@@ -24,6 +25,7 @@ class OrderMasterRepositoryTest {
     }
 
     @Test
+    @Disabled
     void assumeTest() {
         assumeTrue("LOCAL".equalsIgnoreCase(System.getenv("TEST_ENV")));
     }

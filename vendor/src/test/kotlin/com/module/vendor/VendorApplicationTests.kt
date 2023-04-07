@@ -1,4 +1,4 @@
-package com.example.vendor
+package com.module.vendor
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

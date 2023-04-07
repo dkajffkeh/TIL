@@ -1,4 +1,4 @@
-package com.example.vendor
+package com.module.vendor
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -9,3 +9,4 @@ class VendorApplication
 fun main(args: Array<String>) {
     runApplication<VendorApplication>(*args)
 }
+

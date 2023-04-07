@@ -251,6 +251,7 @@ a.age = 100;
 
 Person b = a;
 b = null;
+
 ```
 
 위 코드에서 과연 a 값 또한 null 이 되었을까 ? 그렇지 않다 b 만 null 값으로 출력 되었을것이다. 위 코드에서 모두 name 이 Camilla 로 변경된 것은 변수 a 가 

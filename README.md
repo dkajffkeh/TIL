@@ -6,6 +6,12 @@
 
 > 방구석 철학자가 되지 않기위한 기록.
 
+
+## Nextstep TDD 클린코드 java 16기
+
+---
+- [Next-step TDD 클린코드 java 16기 Start 회고](https://velog.io/@dkajffkem/TDD)
+
 ## 회고
 
 ---

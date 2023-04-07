@@ -4,9 +4,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootTest
 public class WebClientTest {
@@ -15,24 +19,21 @@ public class WebClientTest {
     private WebClient webClient;
 
     @Test
-    @DisplayName("MonoTest")
-    void monoTest() {
-        Mono<String> helloWebClient = webClient.get()
-                .uri("/v1/test")
+    @DisplayName("Flux Test")
+    void fluxTest() {
+        System.out.println("Api요청");
+
+        Map<String,String> map = new HashMap<>();
+
+        Mono<String> stringMono = webClient.get()
+                .uri(URI.create("http://localhost:8889/kotlin/test"))
+                .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(String.class);
 
-        System.out.println(helloWebClient.block());
-    }
+        stringMono.doOnSuccess(System.out::println).subscribe();
 
-    @Test
-    @DisplayName("fluxTest")
-    void fluxTest() {
-        Flux<String> helloWebClient = webClient.get()
-                .uri("/v1/test")
-                .retrieve()
-                .bodyToFlux(String.class);
 
-        System.out.println(helloWebClient.blockLast());
+        System.out.println("haha");
     }
 }

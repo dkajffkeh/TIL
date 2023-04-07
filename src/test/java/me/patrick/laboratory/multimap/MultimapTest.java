@@ -1,10 +1,11 @@
 package me.patrick.laboratory.multimap;
 
-import com.ctc.wstx.shaded.msv_core.grammar.OtherExp;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class MultimapTest {
 

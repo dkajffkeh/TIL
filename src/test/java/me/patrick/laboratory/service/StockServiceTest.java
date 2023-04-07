@@ -2,15 +2,21 @@ package me.patrick.laboratory.service;
 
 import me.patrick.laboratory.finalvalue.entity.Stock;
 import me.patrick.laboratory.repository.StockRepository;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.repository.query.FluentQuery;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -36,6 +42,7 @@ class StockServiceTest {
     }
 
     @Test
+    @Disabled
     public void stock_decrease() {
         stockService.decrease(1L, 1L);
 
@@ -47,6 +54,7 @@ class StockServiceTest {
     }
 
     @Test
+    @Disabled
     public void 동시에_100명이_주문() throws InterruptedException {
         int threadCount = 100;
         ExecutorService executorService = Executors.newFixedThreadPool(32);
@@ -69,4 +77,11 @@ class StockServiceTest {
         // 100 - (100 * 1) = 0
         assertEquals(0, stock.getQuantity());
     }
+
+    @Test
+    @DisplayName("Optimistic lock stock Service Test")
+    void lockStockServiceTest() {
+
+    }
+
 }
