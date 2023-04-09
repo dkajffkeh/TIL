@@ -91,7 +91,7 @@
 
 - [객체지향의 원리와 이해](ReferenceBook/OOP_principle_theory.md)
 - [그림으로 공부하는 IT 인프라 스트럭쳐](ReferenceBook/IT_infrastructure.md)
-- [엘레강트 오브젝트](ReferenceBook/Elegance Object.md)
+- [엘레강트 오브젝트](ReferenceBook/EleganceObject.md)
 
 ## 인프런 강의
 
@@ -104,4 +104,5 @@
 - [보일러 플레이트 프로젝트](https://github.com/jackson-hong/BoilerPlateProject)
 
 ## 운영체제
-- [시스템콜이란]()
+
+[//]: # (- [시스템콜이란]&#40;&#41;)
