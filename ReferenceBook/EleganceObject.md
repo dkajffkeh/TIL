@@ -409,8 +409,102 @@ class EOLString {
 클래스가 작아질수록 코드는 더 깔끔해진다. 퍼블릭 상수를 절대로 사용하지 말자.
 ```
 
+### 2.6 불변객체를 만드세요
 
+> 불변객체란 간단하게 객체를 생성후 상태 변경이 불가능한 객체를 말한다.
 
+```java
+class MutableCash {
+    private int dollars;
+    
+    public void setDollars(int val) {
+        this.dollars = val
+    }
+}
+
+class ImmutableCash {
+    private int dollars;
+    
+    ImmutableCash(int val) {
+        this.dollars = val;
+    }
+}
+```
+
+불변객체의 수정이 일어나야 한다면 새로운 객체를 생성해야 한다.
+
+```java
+class ImmutableCash {
+    private int dollars;
+    
+    ImmutableCash(int val) {
+        this.dollars = val;
+    }
+    
+    public Cash multiple(int factor) {
+        return new ImmutableCash(this.dollars * factor);
+    }
+}
+```
+
+```java
+
+    public static void main(String[] args) {
+
+        Map<Cash, String> map = new HashMap<>();
+        Cash five = new Cash(5);
+        Cash ten = new Cash(10);
+        map.put(five,"five");
+        map.put(ten,"ten");
+        System.out.println(map);
+    }
+
+    public static class Cash {
+        private int dollars;
+
+        public Cash(int dlr) {
+            this.dollars = dlr;
+        }
+
+        public void setDollars(int dollars) {
+            this.dollars = dollars;
+        }
+
+        public int getDollars() {
+            return dollars;
+        }
+
+        public void mul(int factor) {
+            this.dollars *= factor;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            Cash cash = (Cash) o;
+            return dollars == cash.dollars;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(dollars);
+        }
+
+        @Override
+        public String toString() {
+            return "Cash{" +
+                    "dollars=" + dollars +
+                    '}';
+        }
+    }
+```
+
+불변객체 에 대한 규약을 지키지 않은 경우 
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
