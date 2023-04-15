@@ -1,5 +1,7 @@
 package me.patrick.laboratory.member;
 
+import java.util.Arrays;
+import java.util.List;
 import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
 import me.patrick.laboratory.repository.MemberMasterRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,9 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Arrays;
-import java.util.List;
 
 @SpringBootTest
 public class MemberMstTest {
