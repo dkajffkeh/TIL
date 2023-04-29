@@ -24,14 +24,15 @@ public class MemberService {
     private final MemberServiceHandler memberServiceHandler;
 
     public void saveAllTest() {
-        List<MemberMst> members = memberMasterRepository.findAll();
+/*        List<MemberMst> members = memberMasterRepository.findAll();
 
         members.forEach(it -> it.plusAge(1));
 
-        memberMasterRepository.saveAll(members);
+        memberMasterRepository.saveAll(members);*/
+        System.out.println("Test");
     }
 
-    public Long createUser() {
+    public final Long createUser() {
         MemberMst m = MemberMst.of();
         memberMasterRepository.save(m);
         return m.getId();

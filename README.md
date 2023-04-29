@@ -27,6 +27,7 @@
 - [내부 클래스는 왜 static 으로 선언할까?](https://velog.io/@dkajffkem/%EB%82%B4%EB%B6%80-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%EC%99%9C-static-%EC%9C%BC%EB%A1%9C-%EC%84%A0%EC%96%B8%ED%95%A0%EA%B9%8C)
 - [Optional 사용예제](https://velog.io/@dkajffkem/Optional-%EC%82%AC%EC%9A%A9%EC%98%88%EC%A0%9C)
 - [Spring Security CSRF 설정 disabled 해도 될까?](https://velog.io/write?id=58416f91-eaeb-4c1a-b053-607abfad4c3d)
+- [DI 를 사용하는 이유](https://velog.io/@dkajffkem/DI-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 
 ## Java Spring JPA
 
