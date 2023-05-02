@@ -43,6 +43,7 @@
 4. [Projection 사용방법](https://velog.io/@dkajffkem/Projection-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95)
 5. [MappedBy 양방향 연관관계 주인을 설정하는 이유](https://velog.io/@dkajffkem/MappedBy-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EC%A3%BC%EC%9D%B8%EC%9D%84-%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 6. [Querydsl Join 정리](https://velog.io/@dkajffkem/Querydsl-Join-%EC%A0%95%EB%A6%AC)
+7. [ORM 기술을 사용하는 이유](https://velog.io/@dkajffkem/ORM-%EA%B8%B0%EC%88%A0%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 
 ## Spring JPA 나만의 컨벤션 백서
 
