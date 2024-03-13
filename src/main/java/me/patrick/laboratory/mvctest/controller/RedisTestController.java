@@ -25,7 +25,6 @@ public class RedisTestController {
     @PostMapping("")
     public String setRedisKey(@RequestBody Map<String, String> req){
         ValueOperations<String, String> vop = redisTemplate.opsForValue();
-        // Redis Set Key-value
         vop.set(req.get("key"), req.get("value"));
         return "set message success";
     }

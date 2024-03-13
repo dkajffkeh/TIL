@@ -2,7 +2,7 @@
 
 ---
 
-# 2022 TIL
+# 2024 TIL
 
 > 방구석 철학자가 되지 않기위한 기록.
 
@@ -14,7 +14,10 @@
 - [TDD 클린코드 with Java 16 기 1주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-1%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0)
 - [TDD 클린코드 with Java 16 기 2주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-2%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0)
 - [TDD 클린코드 with Java 16 기 3주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-3%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0)
-- [TDD 클린코드 with Java 16 기 4주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-4%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0) 
+- [TDD 클린코드 with Java 16 기 4주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-4%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0)
+- [TDD 클린코드 with Java 16 기 5주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-5%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0-o5j5ccaa)
+- [TDD 클린코드 with Java 16 기 6주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-6%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0)
+- [TDD 클린코드 with Java 16 기 7주차 회고](https://velog.io/@dkajffkem/TDD-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C-with-Java-16-%EA%B8%B0-7%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0)
 
 ## 회고
 
@@ -104,11 +107,8 @@
 ---
 - [스프링 기반 RestAPI 개발](https://github.com/dkajffkeh/EventRestApi_with_kisun)
 - [Optimistic Lock, Pessimistic Lock](https://velog.io/@dkajffkem/Optimistic-Lock-Pessmistick-Lock)
+---
 
-
-## 보일러 플레이트 프로젝트
+## 샘플 코드 저장소
 - [보일러 플레이트 프로젝트](https://github.com/jackson-hong/BoilerPlateProject)
-
-## 운영체제
-
-[//]: # (- [시스템콜이란]&#40;&#41;)
+- [샘플코드](https://github.com/dkajffkeh/sample-code)

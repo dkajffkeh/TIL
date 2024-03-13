@@ -1,11 +1,10 @@
 package me.patrick.laboratory.redisvalue;
 
+import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.data.redis.core.RedisHash;
-
-import javax.persistence.Id;
 
 @Getter
 @RedisHash(value = "member", timeToLive = 30)
