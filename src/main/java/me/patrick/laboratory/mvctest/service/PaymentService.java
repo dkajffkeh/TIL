@@ -1,5 +1,7 @@
 package me.patrick.laboratory.mvctest.service;
 
+import static java.lang.Thread.sleep;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.patrick.laboratory.common.type.OrderStatus;
@@ -12,8 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.ResourceAccessException;
 
-import static java.lang.Thread.sleep;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -24,7 +24,7 @@ public class PaymentService {
 
     @Transactional
     public void createPayment(PaymentParam paymentParam){
-        OrderMst orderMst = orderMasterRepository.findById(paymentParam.getOrderId()).get();
+        OrderMst orderMst = orderMasterRepository.findById(paymentParam.getOrderId());
 
 
         if (orderMst.getOrderStatus() == OrderStatus.DONE) return;
@@ -50,7 +50,7 @@ public class PaymentService {
 
     @Transactional
     public void createPayment(){
-        OrderMst orderMst = orderMasterRepository.findById(2L).get();
+        OrderMst orderMst = orderMasterRepository.findById(2L);
         PaymentMst paymentMst = PaymentMst.builder()
                 .order(orderMst)
                 .productPrice(4000)

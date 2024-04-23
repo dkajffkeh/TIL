@@ -18,7 +18,13 @@ public class MemberController {
 
     @GetMapping("/test/hello")
     public String test() {
-        memberService.saveAllTest();
+        memberService.selectTest1();
+        return "haha";
+    }
+
+    @GetMapping("/test/hello/1")
+    public String test1() {
+        memberService.selectTest2();
         return "haha";
     }
 

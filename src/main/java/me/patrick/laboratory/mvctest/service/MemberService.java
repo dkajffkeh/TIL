@@ -1,5 +1,7 @@
 package me.patrick.laboratory.mvctest.service;
 
+import static me.patrick.laboratory.common.type.OrderStatus.PROGRESS;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.patrick.laboratory.finalvalue.entity.masterEntity.MemberMst;
@@ -11,8 +13,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -23,13 +23,30 @@ public class MemberService {
 
     private final MemberServiceHandler memberServiceHandler;
 
-    public void saveAllTest() {
-/*        List<MemberMst> members = memberMasterRepository.findAll();
+    @Transactional
+    public void selectTest1() {
+        OrderMst orderMst = orderMasterRepository.findById(1L);
+        log.info(orderMst.toString());
+        orderMst.processDone();
+        try {
+            Thread.sleep(10 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
-        members.forEach(it -> it.plusAge(1));
-
-        memberMasterRepository.saveAll(members);*/
-        System.out.println("Test");
+    @Transactional
+    public void selectTest2() {
+        OrderMst orderMst = orderMasterRepository.findById(1L);
+        if(orderMst.getOrderStatus() == PROGRESS) {
+            log.info("결제");
+        }
+    log.info(orderMst.toString());
+        try {
+            Thread.sleep(5 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public final Long createUser() {
@@ -57,7 +74,6 @@ public class MemberService {
         OrderMst orderMst = OrderMst.builder()
                 .paymentBankName("신한")
                 .member(memberMst).build();
-        orderMasterRepository.save(orderMst);
 
     }
 }
