@@ -1,7 +1,7 @@
-#### SSL/TSL Handshake 과정
+#### TLS Handshake 과정
 
-SSL과 TSL HandShake 과정이 선행 되기전 
-3 way handshake 과정이 일어나게 됩니다.
+TLS HandShake 과정이 선행 되기전 
+TCP 3 way handshake 과정이 일어나게 됩니다.
 
 Client 측에서는 SYNC 과 함께 임의의 seq 번호를 서버측에 보내고 연결 서버 측에서는 SYNC 를 잘 받았다 라는 의미로<br>
 SYNC 에 담겨온 임의의 SEQ 에 1을 더하여 클라이언트 측으로 SYNC 와 Acknowledgement 를 전송하며 여기에도 임의의 SEQ 를 전달합니다.<br>
