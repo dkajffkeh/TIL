@@ -6,7 +6,7 @@
 
 기본 설계로 작동합니다.
 
-힙메모리는 Young generation 과 Old Generation 논리적 구조로 설계 되어 있으며  
+힙메모리는 GC 알고리즘에 따라 다르지만 Young generation 과 Old Generation 논리적 구조로 설계 되어 있으며  
 
 Young Generation 은 새롭게 생성된 객체가 할당되는 영역이며 GC 가 작동할때 Reachable 상태를 오랫동안 유지 한 객체는 Old Generation 으로 이동하게 됩니다.
 

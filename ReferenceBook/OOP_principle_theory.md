@@ -42,28 +42,30 @@
        하지만 JVM 의 PC register 영역은 CPU 에 직접 연산지시자를 수행하지 않고 Stack 영역에서 피연산자를 별도로 뽑아 메모리 공간에 저장하는 방식을 취하는데 이를 PC Register 가 관할한다.
     - 자바는 플랫폼에 독립적이기는 하나 OS나 CPU 의 입장에서 보면 하나의 프로세스에 지나지 않기 때문에 머신의 리소스를 사용한다. 
     - PCRegister Thread 마다 하나씩 존재하며 CPU 로 보내는 Instruction 을 제공하기전 버퍼공간으로 활용하게 된다.
+
     
-    ##### Stack (Area)
-    - 기본 자료형 primitive 에 해당되는 지역변수가 저장되는 공간이다. 해당 메소드 호출될 때 메모리에 할당되고 종료되면 메모리가 해제되는 구조이다. 
-    - 원시타입의경우 참조값을 저장하는것이 아니라 실제 stack 에 값이 저장된다.
-    - 커스텀 오브젝트 Heap 영역에 할당관 데이터의 참조값이 할당된다.
-      <p align="center"><img src="images/javaSampleCode.png"/></p>
-        <br>
-      <p align="center"><img src="images/stackandheap.png"/></p>
-      Stack 영역의 변수는 scope 를 갖고 있으며 해당 영역이 소진되지 않고 쌓이는 로직만 계속 된다면 스텍영역넘침 현상 StackOverFlow Exception 이 발생한다.
     
-    ##### Heap
-    - Heap 영역은 Instance(Object) 와 Array 객체 단 두가지 종류만 저장되는 공간이며 모든 Thread 에 의해 공유되는 영역이다.
-    - 애플리케이션 내 Thread 사이에서 공유된 Heap 영역 데이터를 이용할 경우 동기화 이슈가 발생할 수 있다.
-    - Heap 메모리의 해제는 오로지 ***G.C*** 를 통해서만 수행되게 된다. [참조: JVM 메모리 구조](https://12bme.tistory.com/382) <br>
-    ***위 정리된 자료 추후 다시 읽어보기***
+  ##### Stack (Area)
+  - 기본 자료형 primitive 에 해당되는 지역변수가 저장되는 공간이다. 해당 메소드 호출될 때 메모리에 할당되고 종료되면 메모리가 해제되는 구조이다. 
+  - 원시타입의경우 참조값을 저장하는것이 아니라 실제 stack 에 값이 저장된다.
+  - 커스텀 오브젝트 Heap 영역에 할당관 데이터의 참조값이 할당된다.
+    <p align="center"><img src="images/javaSampleCode.png"/></p>
+      <br>
+    <p align="center"><img src="images/stackandheap.png"/></p>
+    Stack 영역의 변수는 scope 를 갖고 있으며 해당 영역이 소진되지 않고 쌓이는 로직만 계속 된다면 스텍영역넘침 현상 StackOverFlow Exception 이 발생한다.
     
-    ##### Method, Class, Static 영역
-    - 클래스 로더에 의해 바이트 코트로 분류된 데이터가 로드 되는 영역이다. 메소드 뿐만 아니라 static 변수도 이에 포함된다.
-    - 이또한 Thread 별로 생성되는것이 아니라 모든 Thread 의 전역 접근이 가능하.
+  ##### Heap
+  - Heap 영역은 Instance(Object) 와 Array 객체 단 두가지 종류만 저장되는 공간이며 모든 Thread 에 의해 공유되는 영역이다.
+  - 애플리케이션 내 Thread 사이에서 공유된 Heap 영역 데이터를 이용할 경우 동기화 이슈가 발생할 수 있다.
+  - Heap 메모리의 해제는 오로지 ***G.C*** 를 통해서만 수행되게 된다. [참조: JVM 메모리 구조](https://12bme.tistory.com/382) <br>
+  ***위 정리된 자료 추후 다시 읽어보기***
     
-    ##### Native Method
-    - 일반적인 메소드가 실행되는경우 Stack 영역에 적재가 되지만 Native 키워드가 붙은 native 메소드가 실행될 경우 이 영역에 할당되게 된다.
+  ##### Method, Class, Static 영역
+  - 클래스 로더에 의해 바이트 코트로 분류된 데이터가 로드 되는 영역이다. 메소드 뿐만 아니라 static 변수도 이에 포함된다.
+  - 이또한 Thread 별로 생성되는것이 아니라 모든 Thread 의 전역 접근이 가능하.
+    
+  ##### Native Method
+  - 일반적인 메소드가 실행되는경우 Stack 영역에 적재가 되지만 Native 키워드가 붙은 native 메소드가 실행될 경우 이 영역에 할당되게 된다.
 
 ### 절차적/구조적 프로그래밍의 유산
 

@@ -11,9 +11,9 @@ Exception 은 항상 runtime 에서 발상하는 코드 에러로써 대표적�
 
 Exception 종류는 RuntimeException 을 상속하는 Unchecked Exception 과 그렇지 않은 Checked Exception 으로 나뉩니다.
 
-Unchecked Exception 은 개발자의 코드 실수나 로직상에서 발생할 수 있는 custom 한 exception 을 핸들링할 수 있으며
+Unchecked Exception 은 개발자의 코드 실수나 로직상에서 발생하며 예외 처리를 강제하지 않습니다.
 
-checked Exception 은 컴파일러가 강제로 예외처리를 하도록 강제합니다. ex) IOException, SQLException
+checked Exception 은 컴파일러가 강제로 예외처리를 하도록 강제합니다. ex) IOException, SQLException, FileNotFoundException 등이 있습니다.
 
 ***NoClassDefFoundError, ClassNotFoundException 차이***
 
