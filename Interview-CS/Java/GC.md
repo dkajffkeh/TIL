@@ -1,23 +1,24 @@
 ## GC 란
 
-필요 없게 된 메모리 객체를 주기적으로 제거 하는 프로세스 입니다.
+필요 없게 된 메모리 객체를 힙영역을 타겟으로 주기적으로 제거 하는 프로세스 입니다.
 
-힙영역이 주로 가비지 컬렉션이 대상이 되는 공간이며 객체는 대부분 일회성이며 메모리에 오랫동안 남아있는 경우는 드물다는 것을
+- STW (stop the world)
 
-기본 설계로 작동합니다.
+GC 가 발생하면 GC 작업을 위해 JVM 이 애플리케이션 실행을 멈추는 시간을 의미합니다.
+GC 작업이 끝나면 다시 애플리케이션 실행을 재개합니다.
 
-힙메모리는 GC 알고리즘에 따라 다르지만 Young generation 과 Old Generation 논리적 구조로 설계 되어 있으며  
+Heap 메모리는 GC 알고리즘 종류에 따라 차이가 있지만 Young generation 과 Old Generation
+으로 나눠지며 오래된 객체는 금방 접근 불가능한 상태가 되며
+오래된 객체는 젊은 객체로부터 참조가 되는경우는 드물다 라는 가설 하에 힙 영역을 2가지로 분류 합니다.
 
-Young Generation 은 새롭게 생성된 객체가 할당되는 영역이며 GC 가 작동할때 Reachable 상태를 오랫동안 유지 한 객체는 Old Generation 으로 이동하게 됩니다.
+- Parallel GC (Mark and Sweep Compact)
 
-- Parallel GC
+java8 의 default GC, 마이너 GC 즉 young generation 클린이 일어날때
+멀티스레드로 Heap 영역을 청소하지만 메이저 GC 가 일어날때에는 단일 스레드로 처리된다.
 
-패러랠 GC 는 Minor GC 즉 Young Generation 에서 Unreachable 상태의 객체를 제거하는 작업을 병렬로 처리하는 방식이며
-GC 발생시 Stop the world 시간을 줄이기 위해 멀티 쓰레드로 작업을 처리합니다.
+- G1 GC (Garbage First)
+java 9 이상부터 default GC 로 사용됩니다.
 
-Old Generation 메모리 제거가 일어날때는 full GC 가 일어나기 때문에 대용량 배치, 멀티코어 환경에서 도입 할 수 있는 GC 입니다.
+G1 GC 는 heap 영역을 region 으로 나누어 관리되며
+region 의 크기는 개발자가 설정할 수 있고 JVM 이 작동할대 정해지며 변하지 않습니다.
 
-- G1 GC
-
-G1 GC 는 Young Generation 과 Old Generation 을 논리적으로 구분하지 않고 Heap 영역을 Region 으로 나누어 관리하는 방식입니다.
-각 스레드가 STW 시간을 줄이기 위해 할당된 region 을 잡고 GC 작업을 병렬로 수행하는 방식입니다.
